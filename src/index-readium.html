@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Children protesting: duty or danger?</title>
+
+        <script src="js/main.js"></script>
+        <script src="lib/figuration/js/figuration.min.js"></script>
+        <script src="lib/mark.js/jquery.mark.min.js"></script>
+        <script src="js/cisl-demo.js"></script>
+        <script src="js/cisl-demo-readium.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="lib/infusion/dist/assets/src/framework/preferences/css/Enactors.css" />
+        <link rel="stylesheet" type="text/css" href="lib/infusion/dist/assets/src/framework/preferences/css/PrefsEditor.css" />
+        <link rel="stylesheet" type="text/css" href="lib/infusion/dist/assets/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" />
+        <link rel="stylesheet" type="text/css" href="lib/figuration/css/figuration.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/cisl-demo.css">
+        <link rel="stylesheet" type="text/css" href="css/cisl-demo-readium.css">
+    </head>
+    <body>
+        <script>
+            $(document).ready(function () {
+
+                var prefsEditor = fluid.prefs.create(".flc-prefsEditor-separatedPanel", {
+                        build: {
+                            gradeNames: [
+                                "cisl.prefs.auxSchema.starter", // this will add the starter set
+                                "fluid.prefs.auxSchema.letterSpace", // this will add the letter space adjuster and enactor
+                                "cisl.prefs.auxSchema.glossary.demo" // adds the glossary
+                            ],
+                            auxiliarySchema: {
+                                "loaderGrades": ["cisl.prefs.composite.separatedPanel"],
+                                "template": "html/SeparatedPanelPrefsEditor.html",
+                                "terms": {
+                                    "templatePrefix": "lib/infusion/src/framework/preferences/html",  // Must match the keyword used below to identify the common path to settings panel templates.
+                                    "messagePrefix": "lib/infusion/src/framework/preferences/messages"  // Must match the keyword used below to identify the common path to message files.
+                                },
+                            }
+                        }
+                    });
+                console.log(prefsEditor);
+            });
+
+        </script>
+        <!-- BEGIN markup for Preference Editor -->
+        <div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel">
+            <!--
+                This div is for the sliding panel bar that shows and hides the Preference Editor controls in the mobile view.
+                A separate panel bar for mobile displays is needed to preserver the correct tab order.
+            -->
+            <div class="fl-panelBar fl-panelBar-smallScreen">
+                <span class="fl-prefsEditor-buttons">
+                    <button class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+                    <button class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+                </span>
+            </div>
+
+            <!-- This is the div that will contain the Preference Editor component -->
+            <div class="flc-slidingPanel-panel flc-prefsEditor-iframe"></div>
+
+            <!--
+                This div is for the sliding panel bar that shows and hides the Preference Editor controls in the desktop view.
+                A separate panel bar for desktop displays is needed to preserver the correct tab order.
+            -->
+            <div class="fl-panelBar fl-panelBar-wideScreen">
+                <span class="fl-prefsEditor-buttons">
+                    <button class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+                    <button class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+                </span>
+            </div>
+        </div>
+        <!-- END markup for Preference Editor -->
+
+        <div class="cislc-readium">
+            <div class="cislc-readium-viewer"></div>
+            <div class="bg-gray-100">
+                <strong class="px-1">CISL Reader</strong>
+                <a href="index.html" class="btn btn-primary btn-small">Library</a>
+                <div class="btn-group">
+                    <button class="btn btn-default btn-small cislc-readium-control-prev">&laquo;Prev</button>
+                    <button class="btn btn-default btn-small cislc-readium-control-next">Next&raquo;</button>
+                </div>
+            </div>
+            <div class="cislc-readium-iframe-container"></div>
+        </div>
+        <script>
+            var readiumComponent;
+            $(document).ready(function () {
+                readiumComponent = cisl.readium.webViewer(".cislc-readium")
+            });
+        </script>
+
+    </body>
+</html>

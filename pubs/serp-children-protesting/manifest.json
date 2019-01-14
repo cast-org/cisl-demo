@@ -1,0 +1,21 @@
+{
+    "@context": "https://readium.org/webpub-manifest/context.jsonld",
+    "metadata": {
+        "@type": "https://schema.org/Article",
+        "headline": "Children protesting: duty or danger?",
+        "publisher": "Word Generation",
+        "language": "en",
+        "modified": "2018-12-13"
+    },
+    "readingOrder": [
+        {"href": "children-protesting.html", "type": "text/html"}
+    ],
+    "resources": [
+        {"href": "images/children-protesting.jpg", "type:": "image/jpeg", "attribution": {
+            "title": "Student loan protest",
+            "author": "Sarah Mirk",
+            "source": "Flickr (https://www.flickr.com/photos/mirkmirk/8152210897)",
+            "license": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/)"
+            }}
+    ]
+}
