@@ -9,7 +9,9 @@ module.exports = {
     },
   resolve: {
       alias: {
-          infusion: "infusion/dist/infusion-uio.min"
+          infusion: "infusion/dist/infusion-uio.min",
+          figuration: "figuration/dist/js/figuration.min",
+          "mark.js": "mark.js/dist/jquery.mark.min.js"
       }
   }
 };

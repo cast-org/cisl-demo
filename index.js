@@ -1,6 +1,8 @@
 // TODO: this should include the other JS dependencies
 
-import exec from 'script-loader!infusion';
+import execInfusion from 'script-loader!infusion';
+import execFiguration from 'script-loader!figuration';
+import execMarkJs from 'script-loader!mark.js';
 import execGlossary from 'script-loader!./src/js/Glossary';
 import execGlossaryEnactor from 'script-loader!./src/js/GlossaryEnactor';
 import execGlossaryPanel from 'script-loader!./src/js/GlossaryPanel';
