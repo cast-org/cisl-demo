@@ -16,10 +16,9 @@ Repo for work for the front-end side of [CISL](http://www.cast.org/our-work/rese
 
 1. Clone this repo
 2. `npm install` for dependencies
-3. `grunt build` to copy dependencies from `node_module` and `src` into the target directory
-4. `npx webpack` to build the main Javascript bundle
-5. Run a server from the `target` directory, like [http-server](https://www.npmjs.com/package/http-server)
-6. Access `http://localhost:8080/` or a similar URL from your browser, or `http://localhost:8080/index-readium` for the Readium-based demo
+3. `grunt build` will run the necessary setup to build the project to `target`, including copying over assets and dependencies from `node_modules` and running webpack
+4. Run a server from the `target` directory, like [http-server](https://www.npmjs.com/package/http-server)
+5. Access `http://localhost:8080/` or a similar URL from your browser, or `http://localhost:8080/index-readium` for the Readium-based demo
 
 ## Developing
 
