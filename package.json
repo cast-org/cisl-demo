@@ -20,6 +20,7 @@
     "@evidentpoint/r2-navigator-web": "^0.0.4",
     "figuration": "^4.0.0-alpha.3",
     "infusion": "3.0.0-dev.20180801T212157Z.09bf3d438",
+    "mark.js": "^8.11.1",
     "npm": "^6.5.0"
   },
   "devDependencies": {
@@ -33,7 +34,6 @@
     "grunt-eslint": "20.0.0",
     "grunt-jsonlint": "1.1.0",
     "grunt-webpack": "3.1.3",
-    "mark.js": "^8.11.1",
     "script-loader": "0.7.2",
     "expose-loader": "0.7.5",
     "webpack": "^4.26.1",
