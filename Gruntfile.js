@@ -2,6 +2,9 @@
 /* global module */
 
 module.exports = function (grunt) {
+
+    var webpackConfig = require("./webpack.config");
+
     "use strict";
 
     // Project configuration.
@@ -17,12 +20,15 @@ module.exports = function (grunt) {
         watch: {
             src: {
                 files: ["src/**"],
-                tasks: ["copy:srcFiles"]
+                tasks: ["copy:srcFiles", "webpack:dev"]
             },
             publications: {
                 files: ["pubs/**"],
                 tasks: ["copy:publications"]
             }
+        },
+        webpack: {
+            dev: webpackConfig
         },
         copy: {
             publications: {
@@ -46,6 +52,7 @@ module.exports = function (grunt) {
                 ]
             },
             demoLibraries: {
+                // TODO: some of these can be removed due to inclusion in webpack
                 files: [
                     {
                         expand: true,
@@ -85,10 +92,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-clean");
+    grunt.loadNpmTasks("grunt-webpack");
 
     // Custom tasks:
 
     grunt.registerTask("default", ["lint"]);
     grunt.registerTask("lint", "Apply eslint and jsonlint", ["eslint", "jsonlint"]);
-    grunt.registerTask("build", "Create full application in target directory", ["clean:target", "copy:demoLibraries", "copy:publications", "copy:srcFiles"]);
+    grunt.registerTask("build", "Create full application in target directory", ["clean:target", "copy:demoLibraries", "copy:publications", "copy:srcFiles", "webpack:dev"]);
 };
