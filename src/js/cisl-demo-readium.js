@@ -23,7 +23,7 @@
             },
             pageLayout: {
                 width: 800,
-                height: 800,
+                //height: 800,
                 // Valid options for spreadMode:
                 // - Freeform,
                 // - FitViewportAuto,

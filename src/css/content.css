@@ -1,0 +1,164 @@
+/* CSS included in the content IFrame */
+
+body {
+    background: #edf2ed;
+    color: #000000;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.container {
+    padding: 1rem;
+}
+
+@media (min-width: 36em) {
+    .container {
+        max-width: 100%;
+    }
+}
+@media (min-width: 48em) {
+    .container {
+        max-width: 90%;
+    }
+}
+@media (min-width: 62em) {
+    .container {
+        max-width: 70%;
+    }
+}
+@media (min-width: 75em) {
+    .container {
+        max-width: 60%;
+    }
+}
+
+article {
+    font-size: 120%;
+}
+
+a.gloss {
+    color: #0F5A74;
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
+
+span.glossOther {
+    background: yellow;
+}
+
+.cisl-figure {
+    display: block;
+    margin: 1rem auto;
+    background: #e1eae2;
+    max-width: 85%;
+}
+
+@media (min-width: 48em) {
+    .cisl-figure {
+        max-width: 75%;
+        margin: 1.5rem auto;
+    }
+}
+@media (min-width: 62em) {
+    .cisl-figure {
+        /*        clear: right;
+                float: right;
+                margin: 0 -5rem 2rem 2rem;
+        */
+        width: 65%;
+        max-width: 30rem;
+    }
+}
+@media (min-width: 75em) {
+    .cisl-figure {
+        width: 55%;
+        /*        margin: 0 -8rem 3rem 3rem; */
+    }
+}
+
+.cisl-supplement {
+    margin: 1rem auto;
+    max-width: 70%;
+    background: #FFFFFF;
+}
+
+.cisl-supplement h2 {
+    background: #cad7cc;
+    padding: 0.5rem;
+}
+
+.cisl-supplement p {
+    padding: 0.5rem;
+}
+
+.cisl-supplement img {
+    max-width: 50%;
+}
+
+@media (min-width: 48em) {
+    .cisl-supplement {
+        max-width: 80%;
+        margin: 1.5rem auto;
+    }
+}
+@media (min-width: 62em) {
+    .cisl-supplement {
+        /*        clear: left;
+                float: left;
+                margin: 0 2rem 2rem -5rem;
+        */
+        width: 50%;
+        max-width: 20rem;
+        font-size: 92%;
+    }
+}
+@media (min-width: 75em) {
+    .cisl-supplement {
+        font-size: 85%;
+        /*        margin: 2rem 3rem 2rem -8rem;  */
+    }
+}
+
+.cisl-supplemental-image {
+    float: right;
+    max-width: 50%;
+    margin: 0 0 1rem 1rem;
+}
+
+/* Open Dyslexic font faces */
+@font-face {
+    font-family: "Open Dyslexic";
+    src: url('../lib/openDyslexic/otf/OpenDyslexic-Regular.otf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Open Dyslexic";
+    src: url('../lib/openDyslexic/otf/OpenDyslexic-Italic.otf');
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Open Dyslexic";
+    src: url('../lib/openDyslexic/otf/OpenDyslexic-Bold.otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Open Dyslexic";
+    src: url('../lib/openDyslexic/otf/OpenDyslexic-BoldItalic.otf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+.popover {
+    max-width: 30rem;
+    font-size: 1rem;
+}
+
+.popover-header {
+    background: #cad7cc;
+}
