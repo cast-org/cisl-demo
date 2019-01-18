@@ -22,8 +22,14 @@ body {
 }
 
 .cislc-readium-iframe-container {
-    border: none;
-    overflow: hidden;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+.cislc-readium-iframe-container iframe {
+    border-width: 0;
 }
 
 /* Index page styles */
