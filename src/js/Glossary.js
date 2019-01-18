@@ -96,11 +96,11 @@ function makeMarkCallbackFunction(word, iFrameContainerSelector) {
 }
 
 // The offset() calculation of the trigger element is in
-// relation its parent body - the body in the iframe
+// relation its parent window (the iframe one)
 //
 // However, to properly place it we need to also account
 // for the dimensions of the elements around the iframe,
-// since our positional calculations are relative to the
+// since our positional instructions are relative to the
 // main document body
 
 function getPopoverPlacement(tip, trigger, iFrameContainerSelector) {
