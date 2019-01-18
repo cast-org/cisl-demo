@@ -17,13 +17,41 @@
                 urlTemplate: "pubs/%pubId/manifest.json"
             },
             viewport: {
-                width: Math.min(window.innerWidth-50, 800),
-                height: window.innerHeight-50,
+                padding: {
+                    width: 0,
+                    height: 50
+                },
+                width: {
+                    expander: {
+                        funcName: "cisl.readium.webViewer.getContainerBasedMeasurement",
+                        args: ["{that}.dom.iframeContainer", "width", "{that}.options.readiumOptions.viewport.padding.width"]
+                    }
+                },
+                height: {
+                    expander: {
+                        funcName: "cisl.readium.webViewer.getContainerBasedMeasurement",
+                        args: ["{that}.dom.iframeContainer", "height", "{that}.options.readiumOptions.viewport.padding.height"]
+                    }
+                },
                 vertical: true
             },
             pageLayout: {
-                width: 800,
-                //height: 800,
+                padding: {
+                    width: 0,
+                    height: 50
+                },
+                width: {
+                    expander: {
+                        funcName: "cisl.readium.webViewer.getContainerBasedMeasurement",
+                        args: ["{that}.dom.iframeContainer", "width", "{that}.options.readiumOptions.pageLayout.padding.width"]
+                    }
+                },
+                height: {
+                    expander: {
+                        funcName: "cisl.readium.webViewer.getContainerBasedMeasurement",
+                        args: ["{that}.dom.iframeContainer", "height", "{that}.options.readiumOptions.pageLayout.padding.height"]
+                    }
+                },
                 // Valid options for spreadMode:
                 // - Freeform,
                 // - FitViewportAuto,
@@ -99,6 +127,10 @@
             iFrameLoader: null,
         }
     });
+
+    cisl.readium.webViewer.getContainerBasedMeasurement = function (container, direction, padding) {
+        return container[direction]() - padding;
+    };
 
     cisl.readium.webViewer.determineManifestUrl = function (parameterId, urlTemplate) {
         var pubId = new URLSearchParams(window.location.search).get(parameterId);
@@ -215,7 +247,8 @@
                                         },
                                         glossaryOptions: {
                                             // Selector to use for glossary
-                                            scopeSelector: "{uiEnhancer}.container"
+                                            scopeSelector: "{uiEnhancer}.container",
+                                            iFrameContainerSelector: ".cislc-readium-iframe-container"
                                         }
                                     }
                                 },

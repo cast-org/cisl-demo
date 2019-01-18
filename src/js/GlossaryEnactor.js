@@ -31,14 +31,16 @@ var fluid_3_0_0 = fluid_3_0_0 || {};
         },
         glossaryOptions: {
             // Selector to use for glossary
-            scopeSelector: "article"
+            scopeSelector: "article",
+            iFrameContainerSelector: "body"
         }
     });
 
     cisl.prefs.enactor.glossary.applyGlossary = function (enableGlossary, that) {
-        var scopeSelector = that.options.glossaryOptions.scopeSelector;
+        var scopeSelector = that.options.glossaryOptions.scopeSelector,
+            iFrameContainerSelector = that.options.glossaryOptions.iFrameContainerSelector;
         if (enableGlossary) {
-            markGlossaryWords(scopeSelector);
+            markGlossaryWords(scopeSelector, iFrameContainerSelector);
             that.events.glossaryMarked.fire();
         } else if (!enableGlossary) {
             unmarkGlossaryWords(scopeSelector);
