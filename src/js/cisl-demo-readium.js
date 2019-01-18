@@ -17,13 +17,33 @@
                 urlTemplate: "pubs/%pubId/manifest.json"
             },
             viewport: {
-                width: Math.min(window.innerWidth-50, 800),
-                height: window.innerHeight-50,
+                width: {
+                    expander: {
+                        funcName: "cisl.readium.webViewer.getViewportWidth",
+                        args: ["{that}.container"]
+                    }
+                },
+                height: {
+                    expander: {
+                        funcName: "cisl.readium.webViewer.getViewportHeight",
+                        args: ["{that}.container"]
+                    }
+                },
                 vertical: true
             },
             pageLayout: {
-                width: 800,
-                height: 800,
+                width: {
+                    expander: {
+                        funcName: "cisl.readium.webViewer.getPageLayoutWidth",
+                        args: ["{that}.container"]
+                    }
+                },
+                height: {
+                    expander: {
+                        funcName: "cisl.readium.webViewer.getPageLayoutHeight",
+                        args: ["{that}.container"]
+                    }
+                },
                 // Valid options for spreadMode:
                 // - Freeform,
                 // - FitViewportAuto,
@@ -99,6 +119,22 @@
             iFrameLoader: null,
         }
     });
+
+    cisl.readium.webViewer.getViewportWidth = function (container) {
+        return Math.min(window.innerWidth-50, 800);
+    };
+
+    cisl.readium.webViewer.getViewportHeight = function (container) {
+        return window.innerHeight-50;
+    };
+
+    cisl.readium.webViewer.getPageLayoutWidth = function (container) {
+        return 800;
+    };
+
+    cisl.readium.webViewer.getPageLayoutHeight = function (container) {
+        return 800;
+    };
 
     cisl.readium.webViewer.determineManifestUrl = function (parameterId, urlTemplate) {
         var pubId = new URLSearchParams(window.location.search).get(parameterId);
@@ -216,7 +252,7 @@
                                         glossaryOptions: {
                                             // Selector to use for glossary
                                             scopeSelector: "{uiEnhancer}.container",
-                                            iFrameContainerSelector: ".cislc-readium-iframe-container" 
+                                            iFrameContainerSelector: ".cislc-readium-iframe-container"
                                         }
                                     }
                                 },
