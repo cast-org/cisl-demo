@@ -47,7 +47,7 @@ function onlyFirstMatch(node, term, totalCount, count) {
     return count === 0;
 }
 
-// Filter function that avoids marking a words that is alrady marked
+// Filter function that avoids marking a word that is already marked
 function notAlreadyMarked(node) {
     "use strict";
     return ($(node).closest("a.gloss").length === 0);
@@ -56,6 +56,7 @@ function notAlreadyMarked(node) {
 // Options hash for marking the primary occurrence of words
 var primaryMarkOptions = {
     accuracy : "exactly",
+    separateWordSearch: false,
     acrossElements: true,
     exclude: [ "h1", "h2", "h3", "h4", "h5", "h6", "figure" ],
     synonyms: alternatesMap,
@@ -67,6 +68,7 @@ var primaryMarkOptions = {
 // Options hash for marking additional occurrences of a word
 var secondaryMarkOptions = {
     accuracy : "exactly",
+    separateWordSearch: false,
     acrossElements: true,
     synonyms: alternatesMap,
     filter: notAlreadyMarked,
@@ -97,12 +99,13 @@ function buildGlossaryPopover(word) {
     "use strict";
     var info = findGlossaryWord(word);
     var popoverHtml = "";
+    var usage = info.usage ? "<p class=\"gloss-usage\">" + info.usage + "</p>" : "";
     if (info.images) {
         popoverHtml +=
             "      <div class=\"container-fluid\">" +
             "         <div class=\"row\">" +
             "            <div class=\"col-md-6 p-0\">" +
-            "               <p>" + info.definition + "</p>" +
+            "               <p>" + info.definition + "</p>" + usage +
             "            </div>" +
             "            <div class=\"col-md-6 p-0\">";
         for (var i in info.images) {
@@ -119,7 +122,7 @@ function buildGlossaryPopover(word) {
             "      </div>"; // cf
     } else {
         popoverHtml +=
-            "<p>" + info.definition + "</p>";
+            "<p>" + info.definition + "</p>" + usage;
     }
 
     return popoverHtml;

@@ -1,3 +1,1008 @@
 [
+  {
+    "word": "accosted",
+    "pos": "Verb",
+    "definition": "To approach, stop, and speak to somebody, especially in an aggressive or insistent way.",
+    "usage": "The thief accosted the man and took all his money."
+  },
+  {
+    "word": "advanced",
+    "pos": "Verb",
+    "definition": "To move forward toward a place or a goal",
+    "usage": "After we advanced on the road all day long, we finally reached the end of our trip."
+  },
+  {
+    "word": "advancing",
+    "pos": "Verb",
+    "definition": "To move forward",
+    "usage": "People stood in line for tickets to the concert, slowly advancing to buy tickets at the ticket booth.",
+    "images": [
+      {
+        "src": "images/glossary/advancing1.jpg",
+        "alt": "Photo of soldiers advancing past a building"
+      },
+      {
+        "src": "images/glossary/advancing2.jpg",
+        "alt": "Photo of people walking forward"
+      }
+    ]
+  },
+  {
+    "word": "alarming",
+    "pos": "Adj",
+    "definition": "Upsetting or disturbing",
+    "usage": "I think loud, unexpected noises are alarming."
+  },
+  {
+    "word": "although",
+    "pos": "Conjunction",
+    "definition": "Even though, while",
+    "usage": "I had to take the math test, although I had not studied for it."
+  },
+  {
+    "word": "assembled",
+    "pos": "Adj",
+    "definition": "Gathered together in one place",
+    "usage": "All grades assembled in the auditorium for a school meeting.",
+    "images": [
+      {
+        "src": "images/glossary/assembled1.jpg",
+        "alt": "Drawing of people assembled in a theatre"
+      },
+      {
+        "src": "images/glossary/assembled2.jpg",
+        "alt": "Photo of people assembled in a street"
+      }
+    ]
+  },
+  {
+    "word": "at length",
+    "pos": "Adv.",
+    "definition": "Finally and as a result of a series of events.",
+    "usage": "The baby, at length, fell asleep after crying for over an hour."
+  },
+  {
+    "word": "atrocity",
+    "pos": "Noun",
+    "definition": "An action that is shocking in its degree of cruelty.",
+    "usage": "Killing someone is an atrocity."
+  },
+  {
+    "word": "authentic",
+    "pos": "Adj",
+    "definition": "Something that is true, not fake or misleading",
+    "usage": "The gold bracelet was authentic, not fake costume jewelry."
+  },
+  {
+    "word": "barred",
+    "pos": "Adj",
+    "definition": "Blocked or closed off",
+    "usage": "The shoppers tried to get into the store, but large crowds barred the doorway.",
+    "images": [
+      {
+        "src": "images/glossary/barred1.jpg",
+        "alt": "Photo of man holding his had up to stop someone"
+      },
+      {
+        "src": "images/glossary/barred2.jpg",
+        "alt": "Drawing of police officers blocking the road with cars"
+      }
+    ]
+  },
+  {
+    "word": "body",
+    "pos": "Noun",
+    "definition": "an organized group of people",
+    "usage": "A large body of people gathered to see the movie star.",
+    "images": [
+      {
+        "src": "images/glossary/body1.jpg",
+        "alt": "Photo of a large group of people in a street"
+      },
+      {
+        "src": "images/glossary/body2.jpg",
+        "alt": "Drawing of groups of colonial soldiers"
+      }
+    ]
+  },
+  {
+    "word": "body of troops",
+    "pos": "Noun",
+    "definition": "An organized group of soldiers ",
+    "usage": "There were about 50 soldiers in the body of troops I saw march in the parade.",
+    "images": [
+      {
+        "src": "images/glossary/body_of_troops1.jpg",
+        "alt": "A body of troops walking through snow"
+      },
+      {
+        "src": "images/glossary/body_of_troops2.jpg",
+        "alt": "Drawing of a body of troops walking"
+      }
+    ]
+  },
+  {
+    "word": "brethren",
+    "pos": "Noun",
+    "definition": "People who are part of the same group, such as family or community.",
+    "usage": "Sometimes I call my close friends my brethren, because we have a great deal in common.",
+    "images": [
+      {
+        "src": "images/glossary/brethren1.jpg",
+        "alt": "Photo of two brothers"
+      },
+      {
+        "src": "images/glossary/brethren2.png",
+        "alt": "Photo of a group of soldiers gathered together "
+      }
+    ]
 
+  },
+  {
+    "word": "collected",
+    "pos": "Verb",
+    "definition": "Gathered",
+    "usage": "I collected all of my baseball cards together in one pile.",
+    "images": [
+      {
+        "src": "images/glossary/collected1.jpg",
+        "alt": "Photo marbles collected together in a bowl"
+      },
+      {
+        "src": "images/glossary/collected2.jpg",
+        "alt": "People gathered together in a stadium"
+      }
+    ]
+  },
+  {
+    "word": "colonial representative",
+    "pos": "A representative is someone who speaks or votes for a group of people. A colonial representative speaks or votes for people who live in colonies, places that are ruled by another, more powerful country. ",
+    "usage": "The colonial representatives from New England spoke out against any new taxes that the English wanted to raise from the American colonies."
+  },
+  {
+    "word": "colonies",
+    "pos": "Noun",
+    "definition": "Areas that are ruled by another country. American colonies were ruled by Great Britain.",
+    "usage": "Louisiana was a French colony before it became part of the United States.",
+    "images": [
+      {
+        "src": "images/glossary/colonies1.jpg",
+        "alt": "Map of the American British colonies in 1760"
+      }
+    ]
+  },
+  {
+    "word": "commenced",
+    "pos": "Verb",
+    "definition": "to start or begin to happen",
+    "usage": "The school day commenced as soon as the opening bell rang."
+  },
+  {
+    "word": "common",
+    "pos": "Noun",
+    "definition": "A grassy area of land that is set aside for public use. Commons, or greens, in colonial times were used as a space to meet and where all townspeople could graze their cattle.",
+    "usage": "Today, the town common in Boston is a large, grassy park in front of the State Capitol building.",
+    "images": [
+      {
+        "src": "images/glossary/common1.jpg",
+        "alt": "Photo of church and buildings around a town common"
+      },
+      {
+        "src": "images/glossary/common2.jpg",
+        "alt": "Drawing of town common "
+      }
+    ]
+  },
+  {
+    "word": "company",
+    "pos": "Noun",
+    "definition": "An organized group of soldiers",
+    "usage": "The company of soldiers was sent off to war last month."
+  },
+  {
+    "word": "concluded",
+    "pos": "Verb",
+    "definition": "To decide after considering all the facts",
+    "usage": "I wrote an essay about television and concluded that, while it is fun to watch, I learn more by reading."
+  },
+  {
+    "word": "confusion",
+    "pos": "Noun",
+    "definition": "Without any kind of plan or organization.",
+    "usage": "People were left in confusion after the hurricane passed through New Orleans.",
+    "images": [
+      {
+        "src": "images/glossary/confusion1.jpg",
+        "alt": "Photo of a woman holding a tangled bunch of wires"
+      },
+      {
+        "src": "images/glossary/confusion2.jpg",
+        "alt": "Drawing of a group of people in confusion"
+      }
+    ]
+  },
+  {
+    "word": "Congress of this Colony",
+    "pos": "Noun",
+    "definition": "&#x2018;This colony&#x2019; was Massachusetts. The Congress is the part of government that makes laws and that most directly represents the people.",
+    "usage": "In Connecticut, the Congress of this colony would mean the part of Connecticut government that passes laws."
+  },
+  {
+    "word": "considerable",
+    "pos": "Adj",
+    "definition": "A large amount",
+    "usage": "The line was long and we waited a considerable amount of time before we got to go into the movie theatre."
+  },
+  {
+    "word": "consult",
+    "pos": "Verb",
+    "definition": "to ask others&#x2019; opinions before taking action",
+    "usage": "I was not sure how to study for the test, so I decided to consult with my friends on how they planned to study."
+  },
+  {
+    "word": "Continental Congress",
+    "pos": "Noun",
+    "definition": "The group of delegates from each of the American colonies who met before, during, and after the American Revolution.",
+    "usage": "The Continental Congress passed laws for the American colonies during the American Revolution.",
+    "images": [
+      {
+        "src": "images/glossary/continental_congress1.jpg",
+        "alt": "Painting of a meeting of the Continental Congress"
+      }
+    ]
+  },
+  {
+    "word": "contrary",
+    "pos": "Adj",
+    "definition": "Opposite or against",
+    "usage": "The car went the wrong way up the one-way street, contrary to what the signs directed the traffic to do."
+  },
+  {
+    "word": "deposition",
+    "pos": "Noun",
+    "definition": "Testimony that is given by a witness under oath which can later be read in court when the witness is absent.",
+    "usage": "My uncle was in the hospital, so he had to give his testimony through a deposition instead of coming to the courthouse himself."
+  },
+  {
+    "word": "detached",
+    "pos": "Adj",
+    "definition": "Separated from something else ",
+    "usage": "I detached all the tags from any new toys before I gave them to my baby brother."
+  },
+  {
+    "word": "detachment",
+    "pos": "Noun",
+    "definition": "a small military unit separated from its normal, larger unit for a special mission.",
+    "usage": "Just five soldiers, out of a group of fifty, were chosen to be a special detachment to cross enemy lines."
+  },
+  {
+    "word": "disarm",
+    "pos": "Verb",
+    "definition": "To force another army to give up their weapons",
+    "usage": "Police make sure to disarm anyone they arrest so that no one can get hurt.",
+    "images": [
+      {
+        "src": "images/glossary/disarm1.jpg",
+        "alt": "Painting showing defeated British troops giving up their weapons"
+      }
+    ]
+  },
+  {
+    "word": "discharged",
+    "pos": "Verb",
+    "definition": "To shoot or fire off",
+    "usage": "The gun accidentally discharged and hurt someone.",
+    "images": [
+      {
+        "src": "images/glossary/discharged1.jpg",
+        "alt": "Drawing of a man shooting two pistols"
+      },
+      {
+        "src": "images/glossary/discharged2.jpg",
+        "alt": "Drawing of soldiers discharging their rifles"
+      }
+    ]
+  },
+  {
+    "word": "discovered",
+    "pos": "Verb",
+    "definition": "Found unexpectedly ",
+    "usage": "I heard a loud noise and when I looked out the window, I discovered that a raccoon was tipping over our trash can."
+  },
+  {
+    "word": "dispatched",
+    "pos": "Verb",
+    "definition": "sent somebody away to accomplish a task",
+    "usage": "We were unsure of where we were, so I dispatched three groups to find what direction we needed to go."
+  },
+  {
+    "word": "disperse",
+    "pos": "Verb",
+    "definition": "To move or scatter away in different directions",
+    "usage": "I burnt the popcorn, so I opened the window to disperse the smoke."
+  },
+  {
+    "word": "distance",
+    "pos": "Noun",
+    "definition": "The amount of space that separates two things or places",
+    "usage": "My house is a long distance from school, so I take the bus in the mornings.",
+    "images": [
+      {
+        "src": "images/glossary/distance1.jpg",
+        "alt": "Photo of a grassy field with buildings in the distance"
+      }
+    ]
+  },
+  {
+    "word": "effect",
+    "pos": "Noun",
+    "definition": "General idea, main point or essential meaning",
+    "usage": "She said that she wanted to go with me to the get lunch, or words to that effect."
+  },
+  {
+    "word": "embattled",
+    "pos": "Adj",
+    "definition": "Under attack",
+    "usage": "I feel embattled when I have too many papers due all at once."
+  },
+  {
+    "word": "file",
+    "pos": "Verb",
+    "definition": "Move in a line, one behind the other",
+    "usage": "The students walked, single file, through the hall to their next class.",
+    "images": [
+      {
+        "src": "images/glossary/file1.jpg",
+        "alt": "Drawing of people walking in a line, one behind another"
+      },
+      {
+        "src": "images/glossary/file2.jpg",
+        "alt": "Drawing of wagons and animals traveling in a line"
+      }
+    ]
+  },
+  {
+    "word": "flank",
+    "pos": "Noun",
+    "definition": "The right or left side of a line of soldiers, usually when they are in battle.",
+    "usage": "I stood in the center, and on my sides were the right and left flanks of the army."
+  },
+  {
+    "word": "ford",
+    "pos": "Noun",
+    "definition": "a shallow part of a river or stream where people can cross to the other side",
+    "usage": "The river was wide and deep everywhere but at the ford, where it was easy to cross through the shallow water.",
+    "images": [
+      {
+        "src": "images/glossary/ford1.jpg",
+        "alt": "Photo of a shallow, narrow section of a stream"
+      },
+      {
+        "src": "images/glossary/ford2.jpg",
+        "alt": "Drawing of a narrow, shallow section of a river"
+      }
+    ]
+  },
+  {
+    "word": "fortunes",
+    "pos": "Noun",
+    "definition": "Money and property",
+    "usage": "The gambler lost his entire fortune when he lost the card game."
+  },
+  {
+    "word": "furiously",
+    "pos": "Adj",
+    "definition": "In a very fast and violent way",
+    "usage": "My sister yelled furiously at me when I broke her favorite necklace."
+  },
+  {
+    "word": "governor",
+    "pos": "Noun",
+    "definition": "a person, either appointed or elected, who is the leader of a state or colony",
+    "usage": "The governor of my state is elected every four years.",
+    "images": [
+      {
+        "src": "images/glossary/governor1.png",
+        "alt": "Drawing of Governor Wentworth, first governor of New Hampshire"
+      },
+      {
+        "src": "images/glossary/governor2.png",
+        "alt": "Photo of a former governor of Minnesota"
+      }
+    ]
+  },
+  {
+    "word": "green",
+    "pos": "Noun",
+    "definition": "A grassy area of land that is set aside for public use. Greens, or commons, in colonial times were used as a space to meet and where all townspeople could graze their cattle.",
+    "usage": "Places that used to be as town greens are now used as public parks.",
+    "images": [
+      {
+        "src": "images/glossary/green1.jpg",
+        "alt": "Photo of church and buildings around a town common"
+      },
+      {
+        "src": "images/glossary/green2.jpg",
+        "alt": "Drawing of town common"
+      }
+    ]
+  },
+  {
+    "word": "handful",
+    "pos": "Noun",
+    "definition": "A small number",
+    "usage": "My friend got many books at the library, but I only took out a handful.",
+    "images": [
+      {
+        "src": "images/glossary/handful1.jpg",
+        "alt": "Photo of a small pile of coins"
+      },
+      {
+        "src": "images/glossary/handful2.jpg",
+        "alt": "Photo of a small group of people"
+      }
+    ]
+  },
+  {
+    "word": "his person, family, crown, and dignity.",
+    "pos": "An expression that means everything that is valuable to a person"
+  },
+  {
+    "word": "hostilities",
+    "pos": "Noun",
+    "definition": "Fighting against someone",
+    "usage": "Hostilities ended when each side agreed to stop fighting."
+  },
+  {
+    "word": "huzzaed",
+    "pos": "Verb",
+    "definition": "Shouted, usually used to mean happiness or encouragement.",
+    "usage": "A loud huzzah came from the miners when they saw that they had found gold."
+  },
+  {
+    "word": "inhabitants",
+    "pos": "Noun",
+    "definition": "People who live in a particular place",
+    "usage": "The inhabitants of my home are all members of my family.",
+    "images": [
+      {
+        "src": "images/glossary/inhabitants1.jpg",
+        "alt": "Photo of inhabitants of a colonial town"
+      }
+    ]
+  },
+  {
+    "word": "inhuman",
+    "pos": "Adj",
+    "definition": "Very cruel and vicious",
+    "usage": "Mistreating a family pet seems like an inhuman thing to do."
+  },
+  {
+    "word": "inquire",
+    "pos": "Verb",
+    "definition": "To ask a question about something",
+    "usage": "I was unsure of how to get to my friend&#x2019;s house, so I stopped in a shop to inquire if her street was nearby."
+  },
+  {
+    "word": "instant",
+    "pos": "Adj",
+    "definition": "Happening in the current month or year in which the author is writing",
+    "usage": "I just had my birthday party, on the fifteenth of December instant."
+  },
+  {
+    "word": "instantaneously",
+    "pos": "Adv",
+    "definition": "Something that happens right after something else",
+    "usage": "When our teacher announced that the test was cancelled, we instantaneously began to cheer."
+  },
+  {
+    "word": "instantly",
+    "pos": "Adv",
+    "definition": "Right away and without any waiting",
+    "usage": "I touched the hot stove and instantly pulled my hand away."
+  },
+  {
+    "word": "intelligence",
+    "pos": "Noun",
+    "definition": "information about secret plans or activities",
+    "usage": "We make sure that our intelligence is correct before we make any decisions."
+  },
+  {
+    "word": "intending",
+    "pos": "Adj",
+    "definition": "Having a plan to do something ",
+    "usage": "Jose was so angry, he left the restaurant intending to never return."
+  },
+  {
+    "word": "light infantry",
+    "pos": "Noun",
+    "definition": "Infantry is the soldiers who are trained to fight on foot rather than from vehicles. Light infantry soldiers are foot soldiers specially trained to fight independently rather than just as one large group. Each soldier is trained to be able to fight in a small, one-on-one skirmish with the enemy.",
+    "usage": "The light infantry ran onto the battlefield as the cannon fired at the enemy soldiers.",
+    "images": [
+      {
+        "src": "images/glossary/light_infantry1.png",
+        "alt": "Drawing of soldiers crouching behind a wall"
+      },
+      {
+        "src": "images/glossary/light_infantry2.png",
+        "alt": "Photo of soldiers walking over a battlefield"
+      }
+    ]
+  },
+  {
+    "word": "meddle",
+    "pos": "Verb",
+    "definition": "Interfere in an unwanted way",
+    "usage": "Don&#x2019;t meddle into other people&#x2019;s business unless they ask you!"
+  },
+  {
+    "word": "meetinghouse",
+    "pos": "Noun",
+    "definition": "A large building where people gathered in colonial times. A meetinghouse was the town church on Sundays. On other days, the meetinghouse was a place where people could meet.",
+    "usage": "An old meetinghouse is built in the center of the of my town.",
+    "images": [
+      {
+        "src": "images/glossary/meeting_house1.jpg",
+        "alt": "Photo of the outside of a colonial meetinghouse"
+      },
+      {
+        "src": "images/glossary/meeting_house2.jpg",
+        "alt": "Photo of the inside of a colonial meetinghouse"
+      }
+    ]
+  },
+  {
+    "word": "military",
+    "pos": "Adj",
+    "definition": "Things related to the army, navy, or other branch of the armed forces.",
+    "usage": "People in the military wear uniforms when they are on duty.",
+    "images": [
+      {
+        "src": "images/glossary/military1.jpg",
+        "alt": "Photo of a military uniform"
+      },
+      {
+        "src": "images/glossary/military2.jpg",
+        "alt": "Drawing two navy ships in battle"
+      }
+    ]
+  },
+  {
+    "word": "militia",
+    "pos": "Noun",
+    "definition": "A group of people which is not part of the regular army but which can be called together to fight in an emergency.",
+    "usage": "The militia practiced every day so that it would be ready if the regular army needed help.",
+    "images": [
+      {
+        "src": "images/glossary/militia1.jpg",
+        "alt": "Drawing of American militia shooting at British soldiers"
+      }
+    ]
+  },
+  {
+    "word": "ministerial",
+    "pos": "Adj",
+    "definition": "connected to a government minister or department",
+    "usage": "The heads of government in England give the English king or queen ministerial advice."
+  },
+  {
+    "word": "ministry",
+    "pos": "Noun",
+    "definition": "A government department headed by a minister. A minister is a senior official in a government department",
+    "usage": "The Ministry of Defense is one of the departments of the British government."
+  },
+  {
+    "word": "mustered",
+    "pos": "Verb",
+    "definition": "The gathering together of a group of soldiers for inspection or to prepare for military action",
+    "usage": "The group of volunteer fire fighters mustered at the firehouse to practice working with the new equipment.",
+    "images": [
+      {
+        "src": "images/glossary/mustered1.png",
+        "alt": "Photo of soldiers mustered together on a field"
+      }
+    ]
+  },
+  {
+    "word": "neighboring",
+    "pos": "Adj",
+    "definition": "Nearby or close to another",
+    "usage": "Connecticut and Rhode Island are neighboring states because they are next to each other.",
+    "images": [
+      {
+        "src": "images/glossary/neighboring1.jpg",
+        "alt": "Map of Massachusetts, Connecticut and Rhode Island"
+      }
+    ]
+  },
+  {
+    "word": "occasion",
+    "pos": "Noun",
+    "definition": "A time when something happens",
+    "usage": "I love parties and other happy occasions."
+  },
+  {
+    "word": "oppose",
+    "pos": "Verb",
+    "definition": "to resist or be against something",
+    "usage": "The other football team was ready to oppose us and tried to block the goal."
+  },
+  {
+    "word": "particulars",
+    "pos": "Noun",
+    "definition": "individual facts, items, or details",
+    "usage": "The newspaper told all the particulars of the bank robbery."
+  },
+  {
+    "word": "parties",
+    "pos": "Noun",
+    "definition": "Groups of people who are gathered to act together",
+    "usage": "On Halloween, you see many small parties of children dressed in costume."
+  },
+  {
+    "word": "passed",
+    "pos": "Verb",
+    "definition": "happened",
+    "usage": "I called my sister to tell her what events passed last weekend."
+  },
+  {
+    "word": "patriots",
+    "pos": "Noun",
+    "definition": "People who support or defend their country",
+    "usage": "The people we now think of as patriots, Americans that fought against the British during the Revolutionary War, were thought of as traitors in England.",
+    "images": [
+      {
+        "src": "images/glossary/patriots1.jpg",
+        "alt": "Drawing of an American colonist holding a rifle"
+      },
+      {
+        "src": "images/glossary/patriots2.jpg",
+        "alt": "Photo of boys carrying American flags"
+      }
+    ]
+  },
+  {
+    "word": "persecution",
+    "pos": "Noun",
+    "definition": "Cruel or unfair treatment",
+    "usage": "Ryan felt that he was a subject of persecution when he could not have any cookies or candy for dessert."
+  },
+  {
+    "word": "pistols",
+    "pos": "Noun",
+    "definition": "small guns that are made to be held in one hand",
+    "usage": "The pistol I saw at a museum had a curved wooden handle and a narrow metal barrel.",
+    "images": [
+      {
+        "src": "images/glossary/pistols1.jpg",
+        "alt": "Photo of pistols, gunpowder case and bullet maker"
+      }
+    ]
+  },
+  {
+    "word": "positive",
+    "pos": "Adj",
+    "definition": "Clear and with no doubt",
+    "usage": "I am positive that I know how to get to the mall."
+  },
+  {
+    "word": "possession",
+    "pos": "Noun",
+    "definition": "To own or hold something",
+    "usage": "I have some of my friend&#x2019;s CDs in my possession, because she let me borrow them."
+  },
+  {
+    "word": "proceeding",
+    "pos": "Noun",
+    "definition": "event",
+    "usage": "The court reporter wrote down all the proceedings that happened during the trial."
+  },
+  {
+    "word": "profess",
+    "pos": "Verb",
+    "definition": "To make a public statement which openly admits something.",
+    "usage": "She professed her belief that all people are created equal to the large audience."
+  },
+  {
+    "word": "province",
+    "pos": "Noun",
+    "definition": "An area controlled by another country",
+    "usage": "Quebec is a province of Canada.",
+    "images": [
+      {
+        "src": "images/glossary/province1.jpg",
+        "alt": "Map of Newfoundland, a province of Canada"
+      }
+    ]
+  },
+  {
+    "word": "provincial",
+    "pos": "Adj",
+    "definition": "Related to an area controlled by another country. The Massachusetts Provincial Congress was the part of Massachusetts government that could make laws for the Massachusetts area.",
+    "usage": "The day to day laws of the colonies were passed by the provincial congress."
+  },
+  {
+    "word": "provincials",
+    "pos": "Noun",
+    "definition": "The people who live in or come from an area ruled by another country",
+    "usage": "The provincials wore farmers clothes, while the soldiers wore bright red uniforms."
+  },
+  {
+    "word": "provocation",
+    "pos": "Noun",
+    "definition": "Actions, words, or something else that makes someone angry.",
+    "usage": "Most dogs are nice, but some will bark and bite others with very little provocation."
+  },
+  {
+    "word": "put them to flight",
+    "pos": "Paraphrase:",
+    "definition": "made them run away ",
+    "usage": "A dog ran toward the cats and put them to flight.",
+    "images": [
+      {
+        "src": "images/glossary/put_them_to_flight1.jpg",
+        "alt": "Drawing of a zebra running away from a lion"
+      }
+    ]
+  },
+  {
+    "word": "rebels",
+    "pos": "Noun",
+    "definition": "Someone who fights against a government",
+    "usage": "In the Civil War, people in the North called people from the South &#x2018;rebels&#x2019; because they were fighting against the Federal Government in Washington, D.C.."
+  },
+  {
+    "word": "regular troops",
+    "pos": "Noun",
+    "definition": "Full-time professional soldiers",
+    "usage": "The regular troops were well trained and were good at fighting on big battlefields.",
+    "images": [
+      {
+        "src": "images/glossary/regular_troops1.jpg",
+        "alt": "Photo of two professional soldiers"
+      }
+    ]
+  },
+  {
+    "word": "regularity",
+    "pos": "Noun ",
+    "definition": "An act that follows normal rules ",
+    "usage": "The rain fell in uneven bursts, without any pattern or regularity."
+  },
+  {
+    "word": "repetitions",
+    "pos": "Noun",
+    "definition": "Saying or doing something again",
+    "usage": "The more repetitions I do on the fitness machines, the stronger I will become."
+  },
+  {
+    "word": "said",
+    "pos": "Adj. ",
+    "definition": "Referring to something that was already named or mentioned.",
+    "usage": "I wrote a letter and then went to mail said letter at the post office."
+  },
+  {
+    "word": "secure",
+    "pos": "Verb ",
+    "definition": "Protect and make safe",
+    "usage": "The store was locked and secured for the night."
+  },
+  {
+    "word": "session",
+    "pos": "Noun",
+    "definition": "The time over which a meeting of a court or branch of government meets",
+    "usage": "The singers practiced for three sessions before performing the music at the concert."
+  },
+  {
+    "word": "shott",
+    "pos": "Noun",
+    "definition": "Shots. The Americans fired their guns at the British soldiers.",
+    "usage": "He crouched down low when he heard several shott fired close by.",
+    "images": [
+      {
+        "src": "images/glossary/shott1.jpg",
+        "alt": "Drawing of old-fashioned boat with guns shooting from the side"
+      },
+      {
+        "src": "images/glossary/shott2.jpg",
+        "alt": "Drawing of many soldiers shooting rifles"
+      }
+    ]
+  },
+  {
+    "word": "sister colonies",
+    "pos": "Noun",
+    "definition": "The other 12 American colonies",
+    "usage": "Virginia and Massachusetts were sister colonies before they became part of the new United States."
+  },
+  {
+    "word": "Sovereign",
+    "pos": "Noun",
+    "definition": "the ruler of a country, especially a king or queen",
+    "usage": "Queen Elizabeth II is the royal Sovereign of England.",
+    "images": [
+      {
+        "src": "images/glossary/sovereign1.jpg",
+        "alt": "Painting of George III, English King during the American Revolution"
+      }
+    ]
+  },
+  {
+    "word": "stood their ground",
+    "pos": "Paraphrase:",
+    "definition": "They stayed right where they were and did not move ",
+    "usage": "The guards stood their ground in front of the building, even though the crowd tired to push them out of the way.",
+    "images": [
+      {
+        "src": "images/glossary/stood_their_ground1.jpg",
+        "alt": "Painting of colonists waiting as British soldiers come near"
+      }
+    ]
+  },
+  {
+    "word": "submission",
+    "pos": "Noun",
+    "definition": "A willingness to surrender "
+  },
+  {
+    "word": "submit",
+    "pos": "Verb",
+    "definition": "Give into somebody else&#x2019;s control or demands.",
+    "usage": "I will not submit to any law that I think is unfair."
+  },
+  {
+    "word": "surround",
+    "pos": "Verb",
+    "definition": "Move so that all the space around something is taken and there is no way to escape.",
+    "usage": "Adult elephants gather together and surround their babies to protect them from predators.",
+    "images": [
+      {
+        "src": "images/glossary/surround1.jpg",
+        "alt": "Drawing of a field with a fence around it."
+      },
+      {
+        "src": "images/glossary/surround2.jpg",
+        "alt": "Drawing of a castle surrounded by water"
+      }
+    ]
+  },
+  {
+    "word": "swift-riding",
+    "pos": "Adj",
+    "definition": "Riding a horse very fast ",
+    "usage": "The horse and swift-riding jockey won the horse race."
+  },
+  {
+    "word": "sworn",
+    "pos": "Adj",
+    "definition": "When you promise that what you say or write is the truth.",
+    "usage": "The witness was sworn in first and then told what she saw happen."
+  },
+  {
+    "word": "tamely",
+    "pos": "Adv",
+    "definition": "Gently, or without any kind of fight or resistance",
+    "usage": "The gentle breeze blew tamely through the trees."
+  },
+  {
+    "word": "Tenth",
+    "pos": "Noun",
+    "definition": "The name of an army group, in this case this refers to one of the British army groups.",
+    "usage": "All the soldiers in the Tenth army regiment arrived safely home at the end of the war."
+  },
+  {
+    "word": "they were got behind walls",
+    "pos": "Paraphrase:",
+    "definition": "They hid behind low stone walls that were in the fields",
+    "images": [
+      {
+        "src": "images/glossary/they_were_got_behind_walls1.jpg",
+        "alt": "Photo of a stone wall in a field"
+      }
+    ]
+  },
+  {
+    "word": "tipped off",
+    "pos": "Verb",
+    "definition": "Given secret information ahead of time",
+    "usage": "My friend tipped me off that I can win the video game by getting a special key to open a room."
+  },
+  {
+    "word": "took",
+    "pos": "Verb",
+    "definition": "Got hold of, captured",
+    "usage": "I took three chess pieces from my opponent before he got even one of mine.",
+    "images": [
+      {
+        "src": "images/glossary/took1.png",
+        "alt": "Drawing of one soldier capturing another"
+      }
+    ]
+  },
+  {
+    "word": "transaction",
+    "pos": "Noun",
+    "definition": "An event. In this case, the event is the battle of Lexington.",
+    "usage": "I went to the bank and did several transactions, including cashing my check and depositing some money."
+  },
+  {
+    "word": "transmitted",
+    "pos": "Verb",
+    "definition": "To pass along a message or some information",
+    "usage": "Colds and diseases spread when germs are transmitted from one person to another."
+  },
+  {
+    "word": "troops",
+    "pos": "Noun",
+    "definition": "A unit of soldiers",
+    "usage": "The troops marched down the street in a tight group during the parade.",
+    "images": [
+      {
+        "src": "images/glossary/troops1.jpg",
+        "alt": "Drawing of units of soldiers walking up a hill"
+      }
+    ]
+  },
+  {
+    "word": "tyranny",
+    "pos": "Noun",
+    "definition": "The harsh use of power over others",
+    "usage": "When all power is in the hands of one person and no one has any right to complain, that is tyranny."
+  },
+  {
+    "word": "under arms",
+    "pos": "Adj",
+    "definition": "Describing a state where people are ready to use weapons",
+    "usage": "Because everyone was told to be under arms, I knew that they would all be carrying a gun or some other weapon."
+  },
+  {
+    "word": "up to our middles",
+    "pos": "Noun",
+    "definition": "Up to our waists",
+    "usage": "The water in shallow end of the pool came up to our middles, just about to our waists.",
+    "images": [
+      {
+        "src": "images/glossary/up_to_our_middles1.jpg",
+        "alt": "Drawing of soldiers walking in water almost to their waists"
+      },
+      {
+        "src": "images/glossary/up_to_our_middles2.jpg",
+        "alt": "Photo of children in water up to their waists"
+      }
+    ]
+  },
+  {
+    "word": "vengeance",
+    "pos": "Noun",
+    "definition": "A harsh punishment that is in response to another act.",
+    "usage": "After the driver hit our family pet, I wanted vengeance."
+  },
+  {
+    "word": "volley",
+    "pos": "Noun",
+    "definition": "When many weapons, especially guns, are fired at the same time.",
+    "usage": "When they heard the order to fire, the soldiers fired a volley of shots at the enemy.",
+    "images": [
+      {
+        "src": "images/glossary/volley1.jpg",
+        "alt": "Drawing of cannon firing a volley of shots"
+      }
+    ]
+  },
+  {
+    "word": "wounded",
+    "pos": "Verb",
+    "definition": "A cut or other injury that causes bleeding",
+    "usage": "I wounded my elbow when I fell down on the sidewalk.",
+    "images": [
+      {
+        "src": "images/glossary/wounded1.jpg",
+        "alt": "Drawing of a girl with a cut on her head"
+      },
+      {
+        "src": "images/glossary/wounded2.jpg",
+        "alt": "Photo of a soldier on a stretcher"
+      }
+    ]
+  }
 ]

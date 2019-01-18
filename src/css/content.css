@@ -46,11 +46,19 @@ span.glossOther {
     background: yellow;
 }
 
+.gloss-usage {
+    font-style: italic;
+}
+
 .cisl-figure {
     display: block;
     margin: 1rem auto;
     background: #e1eae2;
     max-width: 85%;
+}
+
+.popover figure {
+    padding: 0;
 }
 
 @media (min-width: 48em) {

@@ -112,3 +112,13 @@ the panels to match the demo's desired appearance*/
 .fl-prefsEditor .fl-prefsEditor-text-size .fl-choices .fl-choice .cisl-textSize-x-large .fl-preview-A:before {
     font-size: 120%;
 }
+
+/* Don't really belong here, but don't take effect if in content.css since popovers are added to main doc. */
+
+.popover figure {
+    padding: 0;
+}
+
+.gloss-usage {
+    font-style: italic;
+}
