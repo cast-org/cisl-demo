@@ -128,7 +128,7 @@
         }
     });
 
-    cisl.readium.webViewer.getContainerBasedMeasurement = function (container, direction, padding) {        
+    cisl.readium.webViewer.getContainerBasedMeasurement = function (container, direction, padding) {
         return container[direction]() - padding;
     };
 

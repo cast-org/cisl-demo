@@ -113,6 +113,7 @@ function getPopoverPlacement(tip, trigger, iFrameContainerSelector) {
     var pos = $trigger.offset();
     var $iFrameContainer = $(iFrameContainerSelector);
 
+    // Prevent squashing against right side
     var availableSpace = $iFrameContainer.width() - pos.left;
     var quarterWidth = $iFrameContainer.width() / 4;
     var adjustment = 0;
@@ -121,9 +122,26 @@ function getPopoverPlacement(tip, trigger, iFrameContainerSelector) {
         adjustment = quarterWidth - availableSpace;
     }
 
-    loc.top = pos.top + $iFrameContainer.offset().top + $trigger.height();
-    loc.left = pos.left + $iFrameContainer.offset().left - adjustment;
+    // Account for potential shifting by the Readium
+    // pagination behaviour (Readium uses CSS translates to "paginate")
+
+    var translateValues = getTranslateValues($iFrameContainer.find("#layout-view-root"));
+
+    loc.top = pos.top + $iFrameContainer.offset().top + $trigger.height() + translateValues.y;
+    loc.left = pos.left + $iFrameContainer.offset().left - adjustment + translateValues.x;
     return loc;
+}
+
+// Function adapted from https://medium.com/building-blocks/how-to-read-out-translatex-translatey-from-an-element-with-translate3d-with-jquery-c15d2dcccc2c for getting x/y translate values from a jQuery element
+
+function getTranslateValues (element) {
+    var translateValues = {};
+    var matrix = $(element).css('transform').replace(/[^0-9\-.,]/g, '').split(',');
+    var x = matrix[12] || matrix[4];
+    var y = matrix[13] || matrix[5];
+    translateValues.x = parseInt(x);
+    translateValues.y = parseInt(y);
+    return translateValues;
 }
 
 function buildGlossaryPopover(word) {
