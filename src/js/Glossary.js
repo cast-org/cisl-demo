@@ -75,7 +75,7 @@ var secondaryMarkOptions = {
 };
 
 // Construct a callback function to be called when a match is found
-function makeMarkCallbackFunction(word, scope) {
+function makeMarkCallbackFunction(word) {
     "use strict";
     return function (node) {
         console.log("Setting up popover, word=", word);
@@ -149,7 +149,7 @@ function markGlossaryWords(scopeSelector) {
 
     for (var i in userGlossary) {
         var word = userGlossary[i].word;
-        primaryMarkOptions.each = makeMarkCallbackFunction(word, scope);
+        primaryMarkOptions.each = makeMarkCallbackFunction(word);
         scope.mark(word, primaryMarkOptions);
     }
 
