@@ -14,7 +14,6 @@
         <link rel="stylesheet" type="text/css" href="lib/infusion/dist/assets/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" />
         <link rel="stylesheet" type="text/css" href="lib/figuration/css/figuration.min.css" />
         <link rel="stylesheet" type="text/css" href="css/cisl-demo.css">
-        <link rel="stylesheet" type="text/css" href="css/cisl-demo-readium.css">
     </head>
     <body>
         <script>
@@ -36,7 +35,7 @@
                                 },
                             }
                         }
-                    });                
+                    });
             });
 
         </script>
@@ -71,15 +70,19 @@
 
         <div class="cislc-readium">
             <div class="cislc-readium-viewer"></div>
-            <div class="bg-gray-100">
-                <strong class="px-1">CISL Reader</strong>
-                <a href="index.html" class="btn btn-primary btn-small">Library</a>
-                <div class="btn-group">
-                    <button class="btn btn-default btn-small cislc-readium-control-prev">&laquo;Prev</button>
-                    <button class="btn btn-default btn-small cislc-readium-control-next">Next&raquo;</button>
-                </div>
+            <div class="header">
+                <img src="images/logo-1-cisl-transparent-use-on-orange-bg-244px.png" alt="CISL Reader" class="ms-2 mt-0_5" style="max-height: 70px;"/>
             </div>
+            <div class="clearfix">
+                <a href="index.html" class="float-sm-end mx-2 my-0_5 return-link">
+                    <span>&lt;</span>
+                    Return to library
+                </a>
+            </div>
+
             <div class="cislc-readium-iframe-container"></div>
+
+
         </div>
         <script>
             var readiumComponent;

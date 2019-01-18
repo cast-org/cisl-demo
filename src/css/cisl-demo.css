@@ -1,137 +1,50 @@
-.container {
+/* CSS included in the top level pages */
+
+body {
+    background: #cad7cc;
+}
+
+.header {
+    background-color: #ea6550;
+}
+
+.return-link {
+    font-size: 120%;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #000000;
+}
+
+.return-link span {
+    background: #ea6550;
+    border-radius: 50%;
+    padding: .2em .4em;
+}
+
+.cislc-readium-iframe-container {
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+.cislc-readium-iframe-container iframe {
+    border-width: 0;
+}
+
+/* Index page styles */
+
+figure {
+    background: #edf2ed;
     padding: 1rem;
 }
 
-@media (min-width: 36em) {
-    .container {
-        max-width: 100%;
-    }
-}
-@media (min-width: 48em) {
-    .container {
-        max-width: 90%;
-    }
-}
-@media (min-width: 62em) {
-    .container {
-        max-width: 70%;
-    }
-}
-@media (min-width: 75em) {
-    .container {
-        max-width: 60%;
-    }
-}
-
-article {
-    font-size: 120%;
-}
-
-a.gloss {
-    color: #0F5A74;
+figure a {
     text-decoration: none;
-    border-bottom: 1px dashed;
 }
 
-span.glossOther {
-    background: yellow;
-}
-
-.cisl-figure {
-    display: block;
-    margin: 1rem auto;
-    max-width: 85%;
-}
-
-@media (min-width: 48em) {
-    .cisl-figure {
-        max-width: 75%;
-        margin: 1.5rem auto;
-    }
-}
-@media (min-width: 62em) {
-    .cisl-figure {
-/*        clear: right;
-        float: right;
-        margin: 0 -5rem 2rem 2rem;
-*/
-        width: 65%;
-        max-width: 30rem;
-    }
-}
-@media (min-width: 75em) {
-    .cisl-figure {
-        width: 55%;
-/*        margin: 0 -8rem 3rem 3rem; */
-    }
-}
-
-.cisl-supplement {
-    padding: 1em;
-    margin: 1rem auto;
-    font-size: 86%;
-    max-width: 90%;
-    background: #F0F0F0;
-    border-top: 4px solid #C2C2C2;
-}
-
-@media (min-width: 48em) {
-    .cisl-supplement {
-        max-width: 80%;
-        margin: 1.5rem auto;
-    }
-}
-@media (min-width: 62em) {
-    .cisl-supplement {
-/*        clear: left;
-        float: left;
-        margin: 0 2rem 2rem -5rem;
-*/
-        width: 50%;
-        max-width: 20rem;
-        font-size: 92%;
-    }
-}
-@media (min-width: 75em) {
-    .cisl-supplement {
-        font-size: 85%;
-/*        margin: 2rem 3rem 2rem -8rem;  */
-    }
-}
-
-.cisl-supplemental-image {
-    float: right;
-    max-width: 50%;
-    margin: 0 0 1rem 1rem;
-}
-
-/* Open Dyslexic font faces */
-@font-face {
-  font-family: "Open Dyslexic";
-	src: url('../lib/openDyslexic/otf/OpenDyslexic-Regular.otf');
-	font-style: normal;
-	font-weight: normal;
-}
-
-@font-face {
-	font-family: "Open Dyslexic";
-	src: url('../lib/openDyslexic/otf/OpenDyslexic-Italic.otf');
-	font-style: italic;
-	font-weight: normal;
-}
-
-@font-face {
-	font-family: "Open Dyslexic";
-	src: url('../lib/openDyslexic/otf/OpenDyslexic-Bold.otf');
-	font-weight: bold;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "Open Dyslexic";
-	src: url('../lib/openDyslexic/otf/OpenDyslexic-BoldItalic.otf');
-	font-weight: bold;
-	font-style: italic;
+figure a:hover, figure a:active {
+    text-decoration: underline;
 }
 
 /* Preference framework styles */
@@ -144,32 +57,32 @@ span.glossOther {
 /* Figuration's CSS reset sets legend to 1.5rem in font-size, so we have
 to reset this */
 .fl-prefsEditor legend {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 .fl-prefsEditor .fl-choice input:checked ~ label {
     /* Match Figuration .bg-uibase-800 */
-  background-color: #343e48;
-  color: #fff;
+    background-color: #343e48;
+    color: #fff;
 }
 
 /* These next three instructions change some styling and layout behaviour of
 the panels to match the demo's desired appearance*/
 .fl-prefsEditor-separatedPanel .fl-prefsEditor-panels .fl-prefsEditor-panel {
-  padding: 0 0 1.5rem 0;
-  box-shadow: none;
-  border-radius: 0;
+    padding: 0 0 1.5rem 0;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 .fl-prefsEditor-separatedPanel .fl-prefsEditor-panels .fl-prefsEditor-panel h2 {
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-  /* Match Figuration .bg-gray-50 */
-  background-color: #f0f0f0;
-  text-indent: 1.5rem;
-  /* Match Figuration .bg-gray-500 */
-  border-bottom: solid #666 1px;
-  box-shadow: none;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    /* Match Figuration .bg-gray-50 */
+    background-color: #f0f0f0;
+    text-indent: 1.5rem;
+    /* Match Figuration .bg-gray-500 */
+    border-bottom: solid #666 1px;
+    box-shadow: none;
 }
 
 .fl-prefsEditor-separatedPanel .fl-prefsEditor-panels .fl-prefsEditor-panel .fl-prefsEditor-panel-descr {
@@ -178,7 +91,7 @@ the panels to match the demo's desired appearance*/
 
 .cisl-font-open-dyslexic:not([class*='icon']),
 .cisl-font-open-dyslexic *:not([class*='icon']) {
-  font-family: "Open Dyslexic", sans-serif !important;
+    font-family: "Open Dyslexic", sans-serif !important;
 }
 
 .cisl-prefs-beeLine-acknowledgement {
@@ -187,7 +100,7 @@ the panels to match the demo's desired appearance*/
 }
 
 .fl-prefsEditor .fl-prefsEditor-text-size .fl-choices .fl-choice .fl-preview-A:before {
-  content: "Aa";
+    content: "Aa";
 }
 
 .fl-prefsEditor .fl-prefsEditor-text-size .fl-choices .fl-choice .cisl-textSize-small .fl-preview-A:before {
@@ -206,7 +119,12 @@ the panels to match the demo's desired appearance*/
     font-size: 120%;
 }
 
-.popover {
-    max-width: 30rem;
-    font-size: 1rem;
+/* Don't really belong here, but don't take effect if in content.css since popovers are added to main doc. */
+
+.popover figure {
+    padding: 0;
+}
+
+.gloss-usage {
+    font-style: italic;
 }

@@ -47,7 +47,7 @@ function onlyFirstMatch(node, term, totalCount, count) {
     return count === 0;
 }
 
-// Filter function that avoids marking a words that is alrady marked
+// Filter function that avoids marking a word that is already marked
 function notAlreadyMarked(node) {
     "use strict";
     return ($(node).closest("a.gloss").length === 0);
@@ -56,6 +56,7 @@ function notAlreadyMarked(node) {
 // Options hash for marking the primary occurrence of words
 var primaryMarkOptions = {
     accuracy : "exactly",
+    separateWordSearch: false,
     acrossElements: true,
     exclude: [ "h1", "h2", "h3", "h4", "h5", "h6", "figure" ],
     synonyms: alternatesMap,
@@ -67,6 +68,7 @@ var primaryMarkOptions = {
 // Options hash for marking additional occurrences of a word
 var secondaryMarkOptions = {
     accuracy : "exactly",
+    separateWordSearch: false,
     acrossElements: true,
     synonyms: alternatesMap,
     filter: notAlreadyMarked,
@@ -75,7 +77,7 @@ var secondaryMarkOptions = {
 };
 
 // Construct a callback function to be called when a match is found
-function makeMarkCallbackFunction(word, scope) {
+function makeMarkCallbackFunction(word, iFrameContainerSelector) {
     "use strict";
     return function (node) {
         console.log("Setting up popover, word=", word);
@@ -84,7 +86,9 @@ function makeMarkCallbackFunction(word, scope) {
             .data("word", word)
             .attr("href", "#");
         $(node).CFW_Popover({
-            placement: "auto top",
+            placement: function(tip, trigger) {
+                return getPopoverPlacement(tip, trigger, iFrameContainerSelector);
+            },
             container: "body",
             content: buildGlossaryPopover(word),
             html: true,
@@ -93,16 +97,66 @@ function makeMarkCallbackFunction(word, scope) {
     };
 }
 
+// The offset() calculation of the trigger element is in
+// relation its parent window (the iframe one)
+//
+// However, to properly place it we need to also account
+// for the dimensions of the elements around the iframe,
+// since our positional instructions are relative to the
+// main document body
+//
+// This function is far from final, but shows some of what's
+// involve (it also duplicates some things that auto placement
+// does better)
+
+function getPopoverPlacement(tip, trigger, iFrameContainerSelector) {
+    var $trigger = $(trigger);
+    var loc = {};
+    var pos = $trigger.offset();
+    var $iFrameContainer = $(iFrameContainerSelector);
+
+    // Prevent squashing against right side
+    var availableSpace = $iFrameContainer.width() - pos.left;
+    var quarterWidth = $iFrameContainer.width() / 4;
+    var adjustment = 0;
+
+    if(availableSpace < quarterWidth) {
+        adjustment = quarterWidth - availableSpace;
+    }
+
+    // Account for potential shifting by the Readium
+    // pagination behaviour (Readium uses CSS translates to "paginate")
+
+    var translateValues = getTranslateValues($iFrameContainer.find("#layout-view-root"));
+
+    loc.top = pos.top + $iFrameContainer.offset().top + $trigger.height() + translateValues.y;
+    loc.left = pos.left + $iFrameContainer.offset().left - adjustment + translateValues.x;
+    return loc;
+}
+
+// Function adapted from https://medium.com/building-blocks/how-to-read-out-translatex-translatey-from-an-element-with-translate3d-with-jquery-c15d2dcccc2c for getting x/y translate values from a jQuery element
+
+function getTranslateValues (element) {
+    var translateValues = {};
+    var matrix = $(element).css('transform').replace(/[^0-9\-.,]/g, '').split(',');
+    var x = matrix[12] || matrix[4];
+    var y = matrix[13] || matrix[5];
+    translateValues.x = parseInt(x);
+    translateValues.y = parseInt(y);
+    return translateValues;
+}
+
 function buildGlossaryPopover(word) {
     "use strict";
     var info = findGlossaryWord(word);
     var popoverHtml = "";
+    var usage = info.usage ? "<p class=\"gloss-usage\">" + info.usage + "</p>" : "";
     if (info.images) {
         popoverHtml +=
             "      <div class=\"container-fluid\">" +
             "         <div class=\"row\">" +
             "            <div class=\"col-md-6 p-0\">" +
-            "               <p>" + info.definition + "</p>" +
+            "               <p>" + info.definition + "</p>" + usage +
             "            </div>" +
             "            <div class=\"col-md-6 p-0\">";
         for (var i in info.images) {
@@ -119,7 +173,7 @@ function buildGlossaryPopover(word) {
             "      </div>"; // cf
     } else {
         popoverHtml +=
-            "<p>" + info.definition + "</p>";
+            "<p>" + info.definition + "</p>" + usage;
     }
 
     return popoverHtml;
@@ -128,7 +182,7 @@ function buildGlossaryPopover(word) {
 
 // Add a popover to the first occurrence of each glossary word
 // eslint-disable-next-line
-function markGlossaryWords(scopeSelector) {
+function markGlossaryWords(scopeSelector, iFrameContainerSelector) {
     "use strict";
     var scope = $(scopeSelector) || $("article");
 
@@ -136,7 +190,7 @@ function markGlossaryWords(scopeSelector) {
 
     for (var i in userGlossary) {
         var word = userGlossary[i].word;
-        primaryMarkOptions.each = makeMarkCallbackFunction(word, scope);
+        primaryMarkOptions.each = makeMarkCallbackFunction(word, iFrameContainerSelector);
         scope.mark(word, primaryMarkOptions);
     }
 

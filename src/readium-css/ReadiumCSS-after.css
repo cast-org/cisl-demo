@@ -57,7 +57,7 @@
 @import url("../lib/infusion/dist/assets/src/framework/preferences/css/Enactors.css");
 
 /* Import the cisl demo CSS */
-@import url("../css/cisl-demo.css");
+@import url("../css/content.css");
 
 :root[style*="readium-scroll-on"] {
 
