@@ -85,13 +85,7 @@ function makeMarkCallbackFunction(word, scope) {
             .attr("href", "#");
         $(node).CFW_Popover({
             placement: function(tip, trigger) {
-                var $trigger = $(trigger);
-                var loc = {};
-                var pos = $trigger.offset();
-                loc.top = pos.top + $(".cislc-readium-iframe-container").offset().top + $trigger.height();
-                loc.left = pos.left + $(".cislc-readium-iframe-container").offset().left;
-                // return "auto top";
-                return loc;
+                return getPopoverPlacement(tip, trigger, ".cislc-readium-iframe-container");
             },
             container: "body",
             content: buildGlossaryPopover(word),
@@ -99,6 +93,17 @@ function makeMarkCallbackFunction(word, scope) {
             title: word
         });
     };
+}
+
+function getPopoverPlacement(tip, trigger, iframeContainerSelector) {
+    var $trigger = $(trigger);
+    var loc = {};
+    var pos = $trigger.offset();
+    var $iframeContainer = $(iframeContainerSelector);
+    loc.top = pos.top + $iframeContainer.offset().top + $trigger.height();
+    loc.left = pos.left + $iframeContainer.offset().left;
+    // return "auto top";
+    return loc;
 }
 
 function buildGlossaryPopover(word) {
