@@ -102,15 +102,27 @@ function makeMarkCallbackFunction(word, iFrameContainerSelector) {
 // for the dimensions of the elements around the iframe,
 // since our positional instructions are relative to the
 // main document body
+//
+// This function is far from final, but shows some of what's
+// involve (it also duplicates some things that auto placement
+// does better)
 
 function getPopoverPlacement(tip, trigger, iFrameContainerSelector) {
     var $trigger = $(trigger);
     var loc = {};
     var pos = $trigger.offset();
     var $iFrameContainer = $(iFrameContainerSelector);
+
+    var availableSpace = $iFrameContainer.width() - pos.left;
+    var quarterWidth = $iFrameContainer.width() / 4;
+    var adjustment = 0;
+
+    if(availableSpace < quarterWidth) {
+        adjustment = quarterWidth - availableSpace;
+    }
+
     loc.top = pos.top + $iFrameContainer.offset().top + $trigger.height();
-    loc.left = pos.left + $iFrameContainer.offset().left;
-    // return "auto top";
+    loc.left = pos.left + $iFrameContainer.offset().left - adjustment;
     return loc;
 }
 
