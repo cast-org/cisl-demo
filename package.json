@@ -18,7 +18,7 @@
   "homepage": "",
   "dependencies": {
     "@evidentpoint/r2-navigator-web": "^0.0.4",
-    "figuration": "^4.0.0-alpha.3",
+    "figuration": "https://github.com/cast-org/figuration.git#v4-tooltip-iframe",
     "infusion": "3.0.0-dev.20180801T212157Z.09bf3d438",
     "mark.js": "^8.11.1",
     "npm": "^6.5.0"

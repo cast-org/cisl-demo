@@ -84,7 +84,15 @@ function makeMarkCallbackFunction(word, scope) {
             .data("word", word)
             .attr("href", "#");
         $(node).CFW_Popover({
-            placement: "auto top",
+            placement: function(tip, trigger) {
+                var $trigger = $(trigger);
+                var loc = {};
+                var pos = $trigger.offset();
+                loc.top = pos.top + $(".cislc-readium-iframe-container").offset().top + $trigger.height();
+                loc.left = pos.left + $(".cislc-readium-iframe-container").offset().left;
+                // return "auto top";
+                return loc;
+            },
             container: "body",
             content: buildGlossaryPopover(word),
             html: true,
