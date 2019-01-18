@@ -17,31 +17,39 @@
                 urlTemplate: "pubs/%pubId/manifest.json"
             },
             viewport: {
+                padding: {
+                    width: 0,
+                    height: 50
+                },
                 width: {
                     expander: {
-                        funcName: "cisl.readium.webViewer.getViewportWidth",
-                        args: ["{that}.container"]
+                        funcName: "cisl.readium.webViewer.getContainerBasedMeasurement",
+                        args: ["{that}.dom.iframeContainer", "width", "{that}.options.readiumOptions.viewport.padding.width"]
                     }
                 },
                 height: {
                     expander: {
-                        funcName: "cisl.readium.webViewer.getViewportHeight",
-                        args: ["{that}.container"]
+                        funcName: "cisl.readium.webViewer.getContainerBasedMeasurement",
+                        args: ["{that}.dom.iframeContainer", "height", "{that}.options.readiumOptions.viewport.padding.height"]
                     }
                 },
                 vertical: true
             },
             pageLayout: {
+                padding: {
+                    width: 0,
+                    height: 50
+                },
                 width: {
                     expander: {
-                        funcName: "cisl.readium.webViewer.getPageLayoutWidth",
-                        args: ["{that}.container"]
+                        funcName: "cisl.readium.webViewer.getContainerBasedMeasurement",
+                        args: ["{that}.dom.iframeContainer", "width", "{that}.options.readiumOptions.pageLayout.padding.width"]
                     }
                 },
                 height: {
                     expander: {
-                        funcName: "cisl.readium.webViewer.getPageLayoutHeight",
-                        args: ["{that}.container"]
+                        funcName: "cisl.readium.webViewer.getContainerBasedMeasurement",
+                        args: ["{that}.dom.iframeContainer", "height", "{that}.options.readiumOptions.pageLayout.padding.height"]
                     }
                 },
                 // Valid options for spreadMode:
@@ -120,20 +128,8 @@
         }
     });
 
-    cisl.readium.webViewer.getViewportWidth = function (container) {
-        return Math.min(window.innerWidth-50, 800);
-    };
-
-    cisl.readium.webViewer.getViewportHeight = function (container) {
-        return window.innerHeight-50;
-    };
-
-    cisl.readium.webViewer.getPageLayoutWidth = function (container) {
-        return 800;
-    };
-
-    cisl.readium.webViewer.getPageLayoutHeight = function (container) {
-        return 800;
+    cisl.readium.webViewer.getContainerBasedMeasurement = function (container, direction, padding) {        
+        return container[direction]() - padding;
     };
 
     cisl.readium.webViewer.determineManifestUrl = function (parameterId, urlTemplate) {
