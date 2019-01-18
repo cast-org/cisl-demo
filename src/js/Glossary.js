@@ -75,7 +75,7 @@ var secondaryMarkOptions = {
 };
 
 // Construct a callback function to be called when a match is found
-function makeMarkCallbackFunction(word) {
+function makeMarkCallbackFunction(word, iFrameContainerSelector) {
     "use strict";
     return function (node) {
         console.log("Setting up popover, word=", word);
@@ -85,7 +85,7 @@ function makeMarkCallbackFunction(word) {
             .attr("href", "#");
         $(node).CFW_Popover({
             placement: function(tip, trigger) {
-                return getPopoverPlacement(tip, trigger, ".cislc-readium-iframe-container");
+                return getPopoverPlacement(tip, trigger, iFrameContainerSelector);
             },
             container: "body",
             content: buildGlossaryPopover(word),
@@ -95,13 +95,13 @@ function makeMarkCallbackFunction(word) {
     };
 }
 
-function getPopoverPlacement(tip, trigger, iframeContainerSelector) {
+function getPopoverPlacement(tip, trigger, iFrameContainerSelector) {
     var $trigger = $(trigger);
     var loc = {};
     var pos = $trigger.offset();
-    var $iframeContainer = $(iframeContainerSelector);
-    loc.top = pos.top + $iframeContainer.offset().top + $trigger.height();
-    loc.left = pos.left + $iframeContainer.offset().left;
+    var $iFrameContainer = $(iFrameContainerSelector);
+    loc.top = pos.top + $iFrameContainer.offset().top + $trigger.height();
+    loc.left = pos.left + $iFrameContainer.offset().left;
     // return "auto top";
     return loc;
 }
@@ -141,7 +141,7 @@ function buildGlossaryPopover(word) {
 
 // Add a popover to the first occurrence of each glossary word
 // eslint-disable-next-line
-function markGlossaryWords(scopeSelector) {
+function markGlossaryWords(scopeSelector, iFrameContainerSelector) {
     "use strict";
     var scope = $(scopeSelector) || $("article");
 
@@ -149,7 +149,7 @@ function markGlossaryWords(scopeSelector) {
 
     for (var i in userGlossary) {
         var word = userGlossary[i].word;
-        primaryMarkOptions.each = makeMarkCallbackFunction(word);
+        primaryMarkOptions.each = makeMarkCallbackFunction(word, iFrameContainerSelector);
         scope.mark(word, primaryMarkOptions);
     }
 

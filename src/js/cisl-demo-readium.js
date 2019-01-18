@@ -215,7 +215,8 @@
                                         },
                                         glossaryOptions: {
                                             // Selector to use for glossary
-                                            scopeSelector: "{uiEnhancer}.container"
+                                            scopeSelector: "{uiEnhancer}.container",
+                                            iFrameContainerSelector: ".cislc-readium-iframe-container" 
                                         }
                                     }
                                 },
