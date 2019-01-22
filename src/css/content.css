@@ -133,6 +133,17 @@ span.glossOther {
     margin: 0 0 1rem 1rem;
 }
 
+.popover {
+    max-width: 30rem;
+    font-size: 1rem;
+}
+
+.popover-header {
+    background: #cad7cc;
+}
+
+/* Styles for custom UIO themes, fonts, etc */
+
 /* Open Dyslexic font faces */
 @font-face {
     font-family: "Open Dyslexic";
@@ -161,17 +172,6 @@ span.glossOther {
     font-weight: bold;
     font-style: italic;
 }
-
-.popover {
-    max-width: 30rem;
-    font-size: 1rem;
-}
-
-.popover-header {
-    background: #cad7cc;
-}
-
-/* Styles for custom UIO themes, fonts, etc */
 
 .cisl-font-open-dyslexic:not([class*='icon']),
 .cisl-font-open-dyslexic *:not([class*='icon']) {
