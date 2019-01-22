@@ -89,11 +89,6 @@ the panels to match the demo's desired appearance*/
     text-indent: 1.5rem;
 }
 
-.cisl-font-open-dyslexic:not([class*='icon']),
-.cisl-font-open-dyslexic *:not([class*='icon']) {
-    font-family: "Open Dyslexic", sans-serif !important;
-}
-
 .cisl-prefs-beeLine-acknowledgement {
     padding-right: 1.5rem;
     padding-top: 0.5rem;

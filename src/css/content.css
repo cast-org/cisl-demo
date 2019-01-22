@@ -133,35 +133,6 @@ span.glossOther {
     margin: 0 0 1rem 1rem;
 }
 
-/* Open Dyslexic font faces */
-@font-face {
-    font-family: "Open Dyslexic";
-    src: url('../lib/openDyslexic/otf/OpenDyslexic-Regular.otf');
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Open Dyslexic";
-    src: url('../lib/openDyslexic/otf/OpenDyslexic-Italic.otf');
-    font-style: italic;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Open Dyslexic";
-    src: url('../lib/openDyslexic/otf/OpenDyslexic-Bold.otf');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Open Dyslexic";
-    src: url('../lib/openDyslexic/otf/OpenDyslexic-BoldItalic.otf');
-    font-weight: bold;
-    font-style: italic;
-}
-
 .popover {
     max-width: 30rem;
     font-size: 1rem;
