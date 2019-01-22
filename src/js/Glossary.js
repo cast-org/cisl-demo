@@ -117,11 +117,20 @@ function getPopoverPlacement(tip, trigger, iFrameContainerSelector) {
 
     // Prevent squashing against right side
     var availableSpace = $iFrameContainer.width() - pos.left;
-    var quarterWidth = $iFrameContainer.width() / 4;
+
+    // Determine current base font size
+    var baseFontSize = $iFrameContainer.find("iframe").contents().find("body").css("font-size");
+
+    // TODO: ideally CSS and code would share this information
+    var popoverRemWidth = 18;
+
+    console.log(baseFontSize, popoverRemWidth, popover);
+
+    var minWidth = baseFontSize * popoverRemWidth;
     var adjustment = 0;
 
-    if(availableSpace < quarterWidth) {
-        adjustment = quarterWidth - availableSpace;
+    if(availableSpace < minWidth) {
+        adjustment = minWidth - availableSpace;
     }
 
     // Account for potential shifting by the Readium
