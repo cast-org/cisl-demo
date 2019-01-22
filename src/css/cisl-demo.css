@@ -123,39 +123,3 @@ the panels to match the demo's desired appearance*/
 .gloss-usage {
     font-style: italic;
 }
-
-/* Styles for custom UIO themes, fonts, etc */
-
-/* Open Dyslexic font faces */
-@font-face {
-    font-family: "Open Dyslexic";
-    src: url('../lib/openDyslexic/otf/OpenDyslexic-Regular.otf');
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Open Dyslexic";
-    src: url('../lib/openDyslexic/otf/OpenDyslexic-Italic.otf');
-    font-style: italic;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Open Dyslexic";
-    src: url('../lib/openDyslexic/otf/OpenDyslexic-Bold.otf');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Open Dyslexic";
-    src: url('../lib/openDyslexic/otf/OpenDyslexic-BoldItalic.otf');
-    font-weight: bold;
-    font-style: italic;
-}
-
-.cisl-font-open-dyslexic:not([class*='icon']),
-.cisl-font-open-dyslexic *:not([class*='icon']) {
-    font-family: "Open Dyslexic", sans-serif !important;
-}
