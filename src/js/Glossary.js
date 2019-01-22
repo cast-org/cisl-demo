@@ -124,8 +124,6 @@ function getPopoverPlacement(tip, trigger, iFrameContainerSelector) {
     // TODO: ideally CSS and code would share this information
     var popoverRemWidth = 18;
 
-    console.log(baseFontSize, popoverRemWidth, popover);
-
     var minWidth = baseFontSize * popoverRemWidth;
     var adjustment = 0;
 
