@@ -170,3 +170,10 @@ span.glossOther {
 .popover-header {
     background: #cad7cc;
 }
+
+/* Styles for custom UIO themes, fonts, etc */
+
+.cisl-font-open-dyslexic:not([class*='icon']),
+.cisl-font-open-dyslexic *:not([class*='icon']) {
+    font-family: "Open Dyslexic", sans-serif !important;
+}
