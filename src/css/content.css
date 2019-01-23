@@ -3,8 +3,9 @@
 body {
     background: #edf2ed;
     color: #000000;
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
     overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container {
@@ -50,7 +51,7 @@ span.glossOther {
     font-style: italic;
 }
 
-.cisl-figure {
+figure, figure.figure {
     display: block;
     margin: 1rem auto;
     background: #e1eae2;
@@ -62,13 +63,13 @@ span.glossOther {
 }
 
 @media (min-width: 48em) {
-    .cisl-figure {
+    figure {
         max-width: 75%;
         margin: 1.5rem auto;
     }
 }
 @media (min-width: 62em) {
-    .cisl-figure {
+    figure {
         /*        clear: right;
                 float: right;
                 margin: 0 -5rem 2rem 2rem;
@@ -78,10 +79,14 @@ span.glossOther {
     }
 }
 @media (min-width: 75em) {
-    .cisl-figure {
+    figure {
         width: 55%;
         /*        margin: 0 -8rem 3rem 3rem; */
     }
+}
+
+figcaption {
+    padding: 0.5rem;
 }
 
 .cisl-supplement {
@@ -90,27 +95,27 @@ span.glossOther {
     background: #FFFFFF;
 }
 
-.cisl-supplement h2 {
+aside h2 {
     background: #cad7cc;
     padding: 0.5rem;
 }
 
-.cisl-supplement p {
+aside p {
     padding: 0.5rem;
 }
 
-.cisl-supplement img {
+aside img {
     max-width: 50%;
 }
 
 @media (min-width: 48em) {
-    .cisl-supplement {
+    aside {
         max-width: 80%;
         margin: 1.5rem auto;
     }
 }
 @media (min-width: 62em) {
-    .cisl-supplement {
+    aside {
         /*        clear: left;
                 float: left;
                 margin: 0 2rem 2rem -5rem;
@@ -121,16 +126,16 @@ span.glossOther {
     }
 }
 @media (min-width: 75em) {
-    .cisl-supplement {
+    aside {
         font-size: 85%;
         /*        margin: 2rem 3rem 2rem -8rem;  */
     }
 }
 
-.cisl-supplemental-image {
+aside img {
     float: right;
     max-width: 50%;
-    margin: 0 0 1rem 1rem;
+    margin: 1rem;
 }
 
 .popover {
