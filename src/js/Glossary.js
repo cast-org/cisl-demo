@@ -119,7 +119,7 @@ function getPopoverPlacement(tip, trigger, iFrameContainerSelector) {
     var availableSpace = $iFrameContainer.width() - pos.left;
 
     // Determine current base font size
-    var baseFontSize = $iFrameContainer.find("iframe").contents().find("body").css("font-size");
+    var baseFontSize = parseInt($iFrameContainer.find("iframe").contents().find("body").css("font-size"), 10);
 
     // TODO: ideally CSS and code would share this information
     var popoverRemWidth = 18;
