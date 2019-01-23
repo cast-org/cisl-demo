@@ -1,0 +1,14 @@
+{
+    "@context": "https://readium.org/webpub-manifest/context.jsonld",
+    "metadata": {
+        "@type": "https://schema.org/Article",
+        "headline": "Battle of Lexington (modern version)",
+        "publisher": "CAST",
+        "language": "en",
+        "modified": "2019-01-09"
+    },
+    "readingOrder": [
+        {"href": "lexington-modern.html", "type": "text/html"}
+    ],
+    "resources": [ ]
+}
