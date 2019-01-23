@@ -1,7 +1,8 @@
 /* CSS included in the top level pages */
 
 body {
-    background: #cad7cc;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #edf2ed;
 }
 
 .header {
