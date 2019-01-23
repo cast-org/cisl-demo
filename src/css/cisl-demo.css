@@ -10,16 +10,9 @@ body {
 }
 
 .return-link {
-    font-size: 120%;
-    font-family: sans-serif;
-    text-decoration: none;
-    color: #000000;
-}
-
-.return-link span {
-    background: #ea6550;
-    border-radius: 50%;
-    padding: .2em .4em;
+    margin: .5rem 2rem;
+    font-size: 125%;
+    text-align: right;
 }
 
 .cislc-readium-iframe-container {
@@ -35,6 +28,7 @@ body {
 
 /* Index page styles */
 
+/*
 figure {
     background: #edf2ed;
     padding: 1rem;
@@ -46,6 +40,110 @@ figure a {
 
 figure a:hover, figure a:active {
     text-decoration: underline;
+}
+*/
+
+.figure-img {
+    margin-bottom: 0;
+}
+
+@media (min-width: 36em) {
+    .card-deck-index {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        margin-bottom: 2rem;
+    }
+
+    .card-deck-index > .card {
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+        width: calc(50% - 2rem);
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+}
+@media (min-width: 48em) {
+    .card-deck-index > .card {
+        width: calc(33.333333% - 2rem);
+    }
+}
+@media (min-width: 62em) {
+    .card-deck-index > .card {
+        width: calc(25% - 2rem);
+    }
+}
+
+
+.card-index {
+    border: 0;
+    border-radius: 1.5rem;
+    box-shadow: .5rem .5rem 1rem .25rem rgba(0, 0, 0, .05);
+}
+.card-index .card-img-top {
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+.card-index .card-img-bottom {
+    border-radius: 0 0 1.5rem 1.5rem;
+}
+.card-index .card-title {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: inherit;
+    text-decoration: none;
+}
+.card-index .card-title:hover,
+.card-index .card-title:focus {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.eyebrow {
+    margin-bottom: .125em;
+    font-size: .875em;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.link-cta {
+    display: inline-block;
+    font-size: .875em;
+    font-weight: 400;
+    color: inherit;
+    text-decoration: none;
+}
+.link-cta:hover,
+.link-cta:focus {
+    color: inherit;
+    text-decoration: underline;
+}
+.link-cta .fas {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    padding-top: .25em;
+    font-size: 1em;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: baseline;
+    background-color: #ea6550;
+    border-radius: 50%;
+}
+.link-cta .fas:hover,
+.link-cta .fas:focus, {
+    text-decoration: none;
+}
+.link-cta .fas:last-child {
+    margin-left: .25em;
+}
+.link-cta .fas:first-child {
+    margin-right: .25em;
 }
 
 /* Preference framework styles */
