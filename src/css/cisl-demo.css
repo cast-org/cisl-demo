@@ -9,10 +9,95 @@ body {
     background-color: #ea6550;
 }
 
-.return-link {
+.link-cta {
+    display: inline-block;
+    font-size: .875em;
+    font-weight: 400;
+    color: inherit;
+    text-decoration: none;
+}
+.link-cta:hover,
+.link-cta:focus {
+    color: inherit;
+    text-decoration: underline;
+}
+.link-cta .fas {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    padding-top: .25em;
+    font-size: 1em;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: baseline;
+    background-color: #ea6550;
+    border-radius: 50%;
+}
+.link-cta .fas:hover,
+.link-cta .fas:focus, {
+    text-decoration: none;
+}
+.link-cta .fas:last-child {
+    margin-left: .25em;
+}
+.link-cta .fas:first-child {
+    margin-right: .25em;
+}
+
+@media (min-width: 48em) {
+    .topnav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+}
+
+.topnav .return-link,
+.topnav .cisl-pagination {
     margin: .5rem 2rem;
-    font-size: 125%;
-    text-align: right;
+}
+
+.return-link {
+    font-size: 100%;
+    font-weight: 600;
+}
+
+.cisl-pagination .page-link,
+.cisl-pagination .page-text {
+    padding: .5em .75em;
+    font-size: .875em;
+    font-weight: 600;
+    color: #222;
+    background-color: #fff;
+    border-color: #edf2ed;
+    border-radius: 10em;
+}
+.cisl-pagination .page-link:hover,
+.cisl-pagination .page-link:focus {
+    color: #000;
+    background-color: #ea6550;
+    border-color: #edf2ed;
+}
+.cisl-pagination .page-link.active {
+    position: relative;
+    color: #222;
+    background-color: #fff;
+    border-color: #edf2ed;
+}
+.cisl-pagination .page-link.active::after {
+    position: absolute;
+    right: .75em;
+    bottom: .375em;
+    left: .75em;
+    height: .25em;
+    min-height: 3px;
+    display: block;
+    content: '';
+    background-color: #6afaff;
 }
 
 .cislc-readium-iframe-container {
@@ -75,7 +160,6 @@ figure a:hover, figure a:active {
     }
 }
 
-
 .card-index {
     border: 0;
     border-radius: 1.5rem;
@@ -88,7 +172,7 @@ figure a:hover, figure a:active {
     border-radius: 0 0 1.5rem 1.5rem;
 }
 .card-index .card-title {
-    margin-bottom: 0.5rem;
+    margin-bottom: .5rem;
     font-family: inherit;
     font-size: 1.25rem;
     font-weight: 600;
@@ -108,42 +192,6 @@ figure a:hover, figure a:active {
     font-weight: 600;
     color: #888;
     text-transform: uppercase;
-}
-
-.link-cta {
-    display: inline-block;
-    font-size: .875em;
-    font-weight: 400;
-    color: inherit;
-    text-decoration: none;
-}
-.link-cta:hover,
-.link-cta:focus {
-    color: inherit;
-    text-decoration: underline;
-}
-.link-cta .fas {
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    padding-top: .25em;
-    font-size: 1em;
-    color: #000;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: baseline;
-    background-color: #ea6550;
-    border-radius: 50%;
-}
-.link-cta .fas:hover,
-.link-cta .fas:focus, {
-    text-decoration: none;
-}
-.link-cta .fas:last-child {
-    margin-left: .25em;
-}
-.link-cta .fas:first-child {
-    margin-right: .25em;
 }
 
 /* Preference framework styles */
@@ -211,6 +259,20 @@ the panels to match the demo's desired appearance*/
 
 .fl-prefsEditor .fl-prefsEditor-text-size .fl-choices .fl-choice .cisl-textSize-x-large .fl-preview-A:before {
     font-size: 120%;
+}
+
+@media screen and (min-width: 40em) {
+    .fl-prefsEditor-separatedPanel .fl-panelBar .fl-prefsEditor-buttons {
+        padding: .25rem;
+        border-radius: 0 0 1.5rem 1.5rem !important;
+        box-shadow: none !important;
+    }
+    .fl-prefsEditor-separatedPanel .fl-prefsEditor-showHide, .fl-prefsEditor-separatedPanel .fl-prefsEditor-reset {
+        font-size: 1rem;
+    }
+}
+.fl-prefsEditor-separatedPanel .fl-icon-undo {
+    font-size: 1rem;
 }
 
 /* Don't really belong here, but don't take effect if in content.css since popovers are added to main doc. */
