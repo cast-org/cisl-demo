@@ -81,39 +81,32 @@ figure, figure.figure {
     padding: 0;
 }
 
-/*
-@media (min-width: 48em) {
-    figure {
-        max-width: 75%;
-        margin: 1.5rem auto;
-    }
-}
-@media (min-width: 62em) {
-    figure {
-        clear: right;
-        float: right;
-        margin: 0 -5rem 2rem 2rem;
-        width: 65%;
-        max-width: 30rem;
-    }
-}
-@media (min-width: 75em) {
-    figure {
-        width: 55%;
-        margin: 0 -8rem 3rem 3rem;
-    }
-}
-*/
-
 figcaption {
     padding: 0.5rem;
 }
 
-.cisl-supplement {
+aside {
     margin: 1rem auto;
-    max-width: 70%;
     background: #FFFFFF;
     clear: both;
+}
+
+@media (min-width: 48em) {
+    aside {
+        max-width: 80%;
+        margin: 1.5rem auto;
+    }
+}
+@media (min-width: 62em) {
+    aside {
+        width: 75%;
+        font-size: 92%;
+    }
+}
+@media (min-width: 75em) {
+    aside {
+        font-size: 85%;
+    }
 }
 
 aside h2 {
@@ -127,35 +120,7 @@ aside p {
 
 aside img {
     max-width: 50%;
-}
-
-@media (min-width: 48em) {
-    aside {
-        max-width: 80%;
-        margin: 1.5rem auto;
-    }
-}
-@media (min-width: 62em) {
-    aside {
-        /*        clear: left;
-                float: left;
-                margin: 0 2rem 2rem -5rem;
-        */
-        width: 50%;
-        max-width: 20rem;
-        font-size: 92%;
-    }
-}
-@media (min-width: 75em) {
-    aside {
-        font-size: 85%;
-        /*        margin: 2rem 3rem 2rem -8rem;  */
-    }
-}
-
-aside img {
     float: right;
-    max-width: 50%;
     margin: 1rem;
 }
 
