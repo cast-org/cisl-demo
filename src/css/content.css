@@ -62,6 +62,11 @@ figure, figure.figure {
     margin-bottom: 0;
 }
 
+.figure-caption {
+    display: table-caption;
+    caption-side: bottom;
+}
+
 .popover figure {
     padding: 0;
 }
