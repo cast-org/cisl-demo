@@ -76,10 +76,20 @@
             <div class="header">
                 <img src="images/reader-logo-transparent.png" alt="CISL Reader" class="ms-2 mt-0_5"/>
             </div>
-            <div class="return-link">
-                <a href="index.html" class="link-cta">
+
+            <div class="topnav">
+                <a href="index.html" class="link-cta return-link">
                     <i class="fas fa-chevron-left"></i>Return to library
                 </a>
+                <!-- Nav/version section to be added via programmatic method? -->
+                <nav aria-label="Article version">
+                    <ul class="pagination pagination-group cisl-pagination">
+                        <li class="page-item"><a href="#" class="page-link">Modern text</a></li>
+                        <li class="page-item"><span class="page-link active">Original text</span></li>
+                        <li class="page-item"><a href="#" class="page-link">Third option</a></li>
+                    </ul>
+                </nav>
+                <!-- End of programmatic nav/version section -->
             </div>
 
             <div class="cislc-readium-iframe-container"></div>
