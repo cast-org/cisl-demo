@@ -24,5 +24,9 @@
             "license": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/)"
         }},
         {"href": "images/recycle-symbol.jpg", "type": "image/jpeg"}
+    ],
+    "links": [
+        {"title": "Original", "rel": "self", "href": "cast-lexington", "type": "application/webpub+json"},
+        {"title": "Modern", "rel": "alternate", "href": "cast-lexington-modern", "type":  "application/webpub+json"}
     ]
 }
