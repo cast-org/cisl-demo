@@ -65,6 +65,7 @@ figure, figure.figure {
 .figure-caption {
     display: table-caption;
     caption-side: bottom;
+    background-color: #e1eae2;
 }
 
 .popover figure {
