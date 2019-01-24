@@ -56,6 +56,7 @@ figure, figure.figure {
     margin: 1rem auto;
     background: #e1eae2;
     max-width: 85%;
+    clear: both;
 }
 
 .figure-img {
@@ -66,6 +67,14 @@ figure, figure.figure {
     display: table-caption;
     caption-side: bottom;
     background-color: #e1eae2;
+}
+
+@media (min-width: 48em) {
+    figure.figure-end {
+        float: right;
+        margin: 1rem 0 1rem 1rem;
+        max-width: 50%;
+    }
 }
 
 .popover figure {
@@ -104,6 +113,7 @@ figcaption {
     margin: 1rem auto;
     max-width: 70%;
     background: #FFFFFF;
+    clear: both;
 }
 
 aside h2 {
