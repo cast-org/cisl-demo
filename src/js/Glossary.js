@@ -160,24 +160,22 @@ function buildGlossaryPopover(word) {
     var usage = info.usage ? "<p class=\"gloss-usage\">" + info.usage + "</p>" : "";
     if (info.images) {
         popoverHtml +=
-            "      <div class=\"container-fluid\">" +
-            "         <div class=\"row\">" +
-            "            <div class=\"col-md-6 p-0\">" +
-            "               <p>" + info.definition + "</p>" + usage +
-            "            </div>" +
-            "            <div class=\"col-md-6 p-0\">";
+            "     <div class=\"row\">" +
+            "        <div class=\"col-md-6\">" +
+            "           <p>" + info.definition + "</p>" + usage +
+            "        </div>" +
+            "        <div class=\"col-md-6\">";
         for (var i in info.images) {
             var img = info.images[i];
             popoverHtml +=
-                "               <figure class=\"figure\">" +
-                "                  <img src=\"" + img.src + "\" class=\"figure-img img-fluid\" alt=\"" + img.alt + "\">\n" +
-//                "                  <figcaption class=\"figure-caption\">" + img.caption + "</figcaption>\n" +
-                "               </figure>";
+                "           <figure class=\"figure\">" +
+                "              <img src=\"" + img.src + "\" class=\"figure-img img-fluid\" alt=\"" + img.alt + "\">\n" +
+//                "              <figcaption class=\"figure-caption\">" + img.caption + "</figcaption>\n" +
+                "           </figure>";
         }
         popoverHtml +=
-            "            </div>" +
-            "         </div>" + //row
-            "      </div>"; // cf
+            "        </div>" +
+            "     </div>"; //row
     } else {
         popoverHtml +=
             "<p>" + info.definition + "</p>" + usage;

@@ -52,16 +52,21 @@ span.glossOther {
 }
 
 figure, figure.figure {
-    display: block;
+    display: table;
     margin: 1rem auto;
     background: #e1eae2;
     max-width: 85%;
+}
+
+.figure-img {
+    margin-bottom: 0;
 }
 
 .popover figure {
     padding: 0;
 }
 
+/*
 @media (min-width: 48em) {
     figure {
         max-width: 75%;
@@ -70,10 +75,9 @@ figure, figure.figure {
 }
 @media (min-width: 62em) {
     figure {
-        /*        clear: right;
-                float: right;
-                margin: 0 -5rem 2rem 2rem;
-        */
+        clear: right;
+        float: right;
+        margin: 0 -5rem 2rem 2rem;
         width: 65%;
         max-width: 30rem;
     }
@@ -81,9 +85,10 @@ figure, figure.figure {
 @media (min-width: 75em) {
     figure {
         width: 55%;
-        /*        margin: 0 -8rem 3rem 3rem; */
+        margin: 0 -8rem 3rem 3rem;
     }
 }
+*/
 
 figcaption {
     padding: 0.5rem;
