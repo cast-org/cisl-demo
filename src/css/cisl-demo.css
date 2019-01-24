@@ -261,6 +261,20 @@ the panels to match the demo's desired appearance*/
     font-size: 120%;
 }
 
+@media screen and (min-width: 40em) {
+    .fl-prefsEditor-separatedPanel .fl-panelBar .fl-prefsEditor-buttons {
+        padding: .25rem;
+        border-radius: 0 0 1.5rem 1.5rem !important;
+        box-shadow: none !important;
+    }
+    .fl-prefsEditor-separatedPanel .fl-prefsEditor-showHide, .fl-prefsEditor-separatedPanel .fl-prefsEditor-reset {
+        font-size: 1rem;
+    }
+}
+.fl-prefsEditor-separatedPanel .fl-icon-undo {
+    font-size: 1rem;
+}
+
 /* Don't really belong here, but don't take effect if in content.css since popovers are added to main doc. */
 
 .popover figure {
