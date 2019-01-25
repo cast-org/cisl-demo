@@ -102,6 +102,21 @@
                 readiumComponent = cisl.readium.webViewer(".cislc-readium")
             });
         </script>
-
+        <button id="image-info-trigger" class="btn btn-primary" data-cfw="modal" data-cfw-modal-target="#image-info-modal">
+            Launch demo modal
+        </button>
+        <div id="image-info-modal" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-cfw-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body content&hellip;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

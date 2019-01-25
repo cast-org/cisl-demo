@@ -69,6 +69,20 @@ figure, figure.figure {
     background-color: #e1eae2;
 }
 
+.figure-caption .details {
+    text-align: end;
+}
+
+.figure-caption .details a {
+    color: #ea6550;
+}
+
+.figure-caption .details a:after {
+    content: " \f00e";
+    font-weight: 900 !important;
+    font-family: "Font Awesome 5 Free" !important;
+}
+
 @media (min-width: 48em) {
     figure.figure-end {
         float: right;
