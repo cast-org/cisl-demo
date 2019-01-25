@@ -5,7 +5,7 @@ body {
     color: #000000;
     padding: 0 2rem 2rem 2rem;
     overflow: hidden;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .container {
@@ -131,4 +131,15 @@ aside img {
 
 .popover-header {
     background: #cad7cc;
+}
+
+/* Lexington Original Version Styling */
+.lexington-original h1,
+.lexington-original h2,
+.lexington-original h3,
+.lexington-original h4,
+.lexington-original h5,
+.lexington-original h6 {
+    font-family: 'IM Fell English', Georgia, "Times New Roman", Times, serif;
+}
 }
