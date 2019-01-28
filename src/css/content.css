@@ -33,10 +33,6 @@ body {
     }
 }
 
-article {
-    font-size: 120%;
-}
-
 a.gloss {
     color: #0F5A74;
     text-decoration: none;
@@ -59,30 +55,6 @@ figure, figure.figure {
     clear: both;
 }
 
-.figure-img {
-    margin-bottom: 0;
-}
-
-.figure-caption {
-    display: table-caption;
-    caption-side: bottom;
-    background-color: #e1eae2;
-}
-
-.figure-caption .details {
-    text-align: end;
-}
-
-.figure-caption .details a {
-    color: #ea6550;
-}
-
-.figure-caption .details a:after {
-    content: " \f00e";
-    font-weight: 900 !important;
-    font-family: "Font Awesome 5 Free" !important;
-}
-
 @media (min-width: 48em) {
     figure.figure-end {
         float: right;
@@ -91,13 +63,39 @@ figure, figure.figure {
     }
 }
 
-.popover figure {
-    padding: 0;
+.figure-img {
+    margin-bottom: 0;
 }
 
 figcaption {
+    display: table-caption;
     padding: 0.5rem;
+    caption-side: bottom;
+    background-color: #e1eae2;
 }
+
+/* We use <details> and <summary> for image long descriptions. */
+
+/* Custom styling for <summary> */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+figcaption summary {
+    text-align: end;
+}
+
+figcaption summary {
+    color: #ea6550;
+}
+
+figcaption summary:after {
+    content: " \f00e";
+    font-weight: 900 !important;
+    font-family: "Font Awesome 5 Free" !important;
+}
+
+/* Aside -- used for supplementary content */
 
 aside {
     margin: 1rem auto;
@@ -133,10 +131,12 @@ aside p {
 }
 
 aside img {
-    max-width: 50%;
+    max-width: 25%;
     float: right;
     margin: 1rem;
 }
+
+/* Popovers -- used for glossary word definitions */
 
 .popover {
     max-width: 30rem;
@@ -145,4 +145,8 @@ aside img {
 
 .popover-header {
     background: #cad7cc;
+}
+
+.popover figure {
+    padding: 0;
 }
