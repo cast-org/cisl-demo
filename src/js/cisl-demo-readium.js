@@ -146,6 +146,8 @@
                 }
             }
         });
+        setUpImageDetails(readiumIframeBody);
+
     };
 
     cisl.readium.webViewer.loadPublication = function (readiumOptions, loadEvent, loadErrorEvent, readiumComponent) {

@@ -1,5 +1,20 @@
 /* Styles for custom UIO themes, fonts, etc - shared between main document and iframe */
 
+/* Override some Readium defaults */
+:root {
+    --RS__linkColor: #0F5A74;
+    --RS__visitedColor: #0F5A74;
+    --RS__paraIndent: 0;
+}
+
+a:visited {
+    color: #0F5A74;
+}
+
+a {
+    color: #0F5A74;
+}
+
 /* Open Dyslexic font faces */
 @font-face {
     font-family: "Open Dyslexic";

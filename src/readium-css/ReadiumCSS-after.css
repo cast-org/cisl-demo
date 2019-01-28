@@ -49,8 +49,10 @@
 
    Repo: https://github.com/readium/readium-css */
 
-/* Import Figuration CSS */
+/* Import FontAwesome */
+@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
 
+/* Import Figuration CSS */
 @import url("../lib/figuration/css/figuration.min.css");
 
 /* Import the UIO enactor CSS */
