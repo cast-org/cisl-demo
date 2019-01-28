@@ -34,7 +34,7 @@ body {
 }
 
 a.gloss {
-    color: #0F5A74;
+    color: #017a7e;
     text-decoration: none;
     border-bottom: 1px dashed;
 }
@@ -158,6 +158,18 @@ aside img {
 .lexington-original h5,
 .lexington-original h6 {
     font-family: 'IM Fell English', Georgia, "Times New Roman", Times, serif;
+}
+
+.parchment-0 {
+    padding: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: .25rem;
+    box-shadow: 0 0 .5rem .25rem rgba(0, 0, 0, .1);
+    clear: both;
+}
+.parchment-0 p:last-child {
+    margin-bottom: 0;
 }
 
 .parchment-1 {
