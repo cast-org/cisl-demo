@@ -55,7 +55,7 @@ function notAlreadyMarked(node) {
 
 // Options hash for marking the primary occurrence of words
 var primaryMarkOptions = {
-    accuracy : "exactly",
+    accuracy : { value: "exactly", limiters: [ ".", ",", ";", ":", ")"] },
     separateWordSearch: false,
     acrossElements: true,
     exclude: [ "h1", "h2", "h3", "h4", "h5", "h6", "figure" ],
@@ -67,7 +67,7 @@ var primaryMarkOptions = {
 
 // Options hash for marking additional occurrences of a word
 var secondaryMarkOptions = {
-    accuracy : "exactly",
+    accuracy : { value: "exactly", limiters: [ ".", ",", ";", ":", ")"] },
     separateWordSearch: false,
     acrossElements: true,
     synonyms: alternatesMap,
