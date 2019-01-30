@@ -190,7 +190,7 @@
                 ul.append(linkHtml);
             }
         } else {
-            $('#version-switcher').hide();
+            $('#version-switcher').remove();
         }
 
         // FIXME, this is a hack
