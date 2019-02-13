@@ -35,7 +35,7 @@ body {
     border-radius: 50%;
 }
 .link-cta .fas:hover,
-.link-cta .fas:focus, {
+.link-cta .fas:focus {
     text-decoration: none;
 }
 .link-cta .fas:last-child {
@@ -165,11 +165,19 @@ figure a:hover, figure a:active {
     border-radius: 1.5rem;
     box-shadow: .5rem .5rem 1rem .25rem rgba(0, 0, 0, .05);
 }
+.card-index:hover,
+.card-index:focus {
+    box-shadow: 0 0 .1rem .1rem rgba(0, 0, 128, .5);
+}
 .card-index .card-img-top {
     border-radius: 1.5rem 1.5rem 0 0;
 }
 .card-index .card-img-bottom {
     border-radius: 0 0 1.5rem 1.5rem;
+}
+.card-index a {
+    color: inherit;
+    text-decoration: none;
 }
 .card-index .card-title {
     margin-bottom: .5rem;
@@ -177,13 +185,6 @@ figure a:hover, figure a:active {
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.25;
-    color: inherit;
-    text-decoration: none;
-}
-.card-index .card-title:hover,
-.card-index .card-title:focus {
-    color: inherit;
-    text-decoration: underline;
 }
 
 .eyebrow {
