@@ -14,7 +14,7 @@
             },
             manifestUrlConfig: {
                 parameterId: "pub",
-                urlTemplate: "pubs/%pubId/manifest.json"
+                urlTemplate: "http://localhost:3000/webpub/%pubId/manifest.json"
             },
             viewport: {
                 padding: {
@@ -205,7 +205,7 @@
 
         var loader = new r2NavWeb.IFrameLoader(publication.getBaseURI());
 
-        loader.setReadiumCssBasePath("../../readium-css");
+        loader.setReadiumCssBasePath("http://" + window.location.host + "/readium-css");
 
         readiumComponent.iFrameLoader = loader;
 
