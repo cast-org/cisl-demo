@@ -27,7 +27,7 @@
                     },
                     contentServerRootUrl: "http://localhost:3000",
                     strings: {
-                        itemTemplate: '<div class="card card-index"> <div class="card-img"> <img class="card-img-top img-fluid" src="%contentServerRootUrl/%pubDirectory/%id/images/%image" alt="%alt"> </div> <div class="card-body"> <div class="eyebrow">%type</div> <a href="index-readium.html?pub=%id" class="card-title">%title</a> </div>'
+                        itemTemplate: '<div class="card card-index"> <div class="card-img"> <img class="card-img-top img-fluid" src="%contentServerRootUrl/%pubDirectory/%id/images/%image" alt="%alt"> </div> <div class="card-body"> <div class="eyebrow">%type</div> <a href="index-readium.html?pub=%id&pubDirectory=%pubDirectory" class="card-title">%title</a> </div>'
                     }
                 }
             }

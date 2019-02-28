@@ -9,13 +9,15 @@
             webpubUrl: {
                 expander: {
                     funcName: "cisl.readium.webViewer.determineManifestUrl",
-                    args: ["{that}.options.readiumOptions.manifestUrlConfig.parameterId", "{that}.options.readiumOptions.manifestUrlConfig.urlTemplate", "{that}.options.readiumOptions.manifestUrlConfig.contentServerRootUrl"]
+                    args: ["{that}.options.readiumOptions.manifestUrlConfig.pubIdParameter",
+                    "{that}.options.readiumOptions.manifestUrlConfig.pubDirectoryParameter", "{that}.options.readiumOptions.manifestUrlConfig.urlTemplate", "{that}.options.readiumOptions.manifestUrlConfig.contentServerRootUrl"]
                 }
             },
             manifestUrlConfig: {
-                parameterId: "pub",
+                pubIdParameter: "pub",
+                pubDirectoryParameter: "pubDirectory",
                 contentServerRootUrl: "http://localhost:3000",
-                urlTemplate: "%contentServerRootUrl/webpub/%pubId/manifest.json"
+                urlTemplate: "%contentServerRootUrl/%pubDirectory/%pubId/manifest.json"
             },
             viewport: {
                 padding: {
@@ -133,10 +135,13 @@
         return container[direction]() - padding;
     };
 
-    cisl.readium.webViewer.determineManifestUrl = function (parameterId, urlTemplate, contentServerRootUrl) {
-        var pubId = new URLSearchParams(window.location.search).get(parameterId);
+    cisl.readium.webViewer.determineManifestUrl = function (pubIdParameter, pubDirectoryParameter, urlTemplate, contentServerRootUrl) {
+        var pubId = new URLSearchParams(window.location.search).get(pubIdParameter);
+        var pubDirectory = new URLSearchParams(window.location.search).get(pubDirectoryParameter);
+
         return fluid.stringTemplate(urlTemplate, {
             pubId: pubId,
+            pubDirectory: pubDirectory,
             contentServerRootUrl: contentServerRootUrl
             });
     };
