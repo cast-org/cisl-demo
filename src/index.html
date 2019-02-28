@@ -28,7 +28,13 @@
 
 <script>
     $(document).ready(function () {
-        cisl.library.viewer(".cislc-libraryViewer");
+        cisl.library.display({
+            components: {
+                libraryView: {
+                    container: ".cislc-libraryViewer"
+                }
+            }
+        });
     });
 </script>
 </body>
