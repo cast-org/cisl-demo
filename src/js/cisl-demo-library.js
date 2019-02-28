@@ -22,18 +22,19 @@
                     listeners: {
                         "{indexLoader}.events.onResourcesLoaded": {
                             func: "cisl.library.display.appendIndexMarkup",
-                            args: ["{indexLoader}.resources.index.resourceText", "{that}.itemTemplate", "{that}.container"]
+                            args: ["{indexLoader}.resources.index.resourceText", "{that}.options.strings.itemTemplate", "{that}.options.contentServerRootUrl", "{that}.container"]
                         }
                     },
-                    members: {
-                        itemTemplate: '<div class="card card-index"> <div class="card-img"> <img class="card-img-top img-fluid" src="%pubRoot/%id/images/%image" alt="%alt"> </div> <div class="card-body"> <div class="eyebrow">%type</div> <a href="index-readium.html?pub=%id" class="card-title">%title</a> </div>'
+                    contentServerRootUrl: "http://localhost:3000",
+                    strings: {
+                        itemTemplate: '<div class="card card-index"> <div class="card-img"> <img class="card-img-top img-fluid" src="%contentServerRootUrl/%pubDirectory/%id/images/%image" alt="%alt"> </div> <div class="card-body"> <div class="eyebrow">%type</div> <a href="index-readium.html?pub=%id" class="card-title">%title</a> </div>'
                     }
                 }
             }
         }
     });
 
-    cisl.library.display.appendIndexMarkup = function(indexResourceText, itemTemplate, container) {
+    cisl.library.display.appendIndexMarkup = function(indexResourceText, itemTemplate, contentServerRootUrl, container) {
         var index = JSON.parse(indexResourceText);
         fluid.each(index, function (item) {
             var itemMarkup = fluid.stringTemplate(itemTemplate, {
@@ -42,7 +43,8 @@
                 alt: item.alt,
                 title: item.title,
                 type: item.type,
-                pubRoot: item.pubRoot
+                contentServerRootUrl: contentServerRootUrl,
+                pubDirectory: item.pubDirectory
             });
             container.append(itemMarkup);
         });

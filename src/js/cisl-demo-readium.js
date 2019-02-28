@@ -9,12 +9,13 @@
             webpubUrl: {
                 expander: {
                     funcName: "cisl.readium.webViewer.determineManifestUrl",
-                    args: ["{that}.options.readiumOptions.manifestUrlConfig.parameterId", "{that}.options.readiumOptions.manifestUrlConfig.urlTemplate"]
+                    args: ["{that}.options.readiumOptions.manifestUrlConfig.parameterId", "{that}.options.readiumOptions.manifestUrlConfig.urlTemplate", "{that}.options.readiumOptions.manifestUrlConfig.contentServerRootUrl"]
                 }
             },
             manifestUrlConfig: {
                 parameterId: "pub",
-                urlTemplate: "http://localhost:3000/webpub/%pubId/manifest.json"
+                contentServerRootUrl: "http://localhost:3000",
+                urlTemplate: "%contentServerRootUrl/webpub/%pubId/manifest.json"
             },
             viewport: {
                 padding: {
@@ -132,9 +133,12 @@
         return container[direction]() - padding;
     };
 
-    cisl.readium.webViewer.determineManifestUrl = function (parameterId, urlTemplate) {
+    cisl.readium.webViewer.determineManifestUrl = function (parameterId, urlTemplate, contentServerRootUrl) {
         var pubId = new URLSearchParams(window.location.search).get(parameterId);
-        return fluid.stringTemplate(urlTemplate, {pubId: pubId});
+        return fluid.stringTemplate(urlTemplate, {
+            pubId: pubId,
+            contentServerRootUrl: contentServerRootUrl
+            });
     };
 
     cisl.readium.webViewer.handleIFrameLoaded = function (loadedIFrame, readiumComponent) {
