@@ -9,7 +9,9 @@
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="lib/figuration/css/figuration.min.css" />
     <link rel="stylesheet" type="text/css" href="css/cisl-demo.css" />
+
     <script src="js/main.js"></script>
+    <script src="js/cisl-demo-library.js"></script>
 </head>
 <body>
 <div class="cislc-readium">
@@ -21,63 +23,13 @@
 </div>
 
 <div class="container-fluid">
-    <div class="card-deck-index">
-        <div class="card card-index">
-            <div class="card-img">
-                <img class="card-img-top img-fluid" src="pubs/serp-paper-or-plastic/images/plastic-bags-duncan-hull.jpg" alt="Photo of plastic bags in front of and on a fence">
-            </div>
-            <div class="card-body">
-                <div class="eyebrow">Article</div>
-                <a href="index-readium.html?pub=serp-paper-or-plastic" class="card-title">Should Our Use of Paper or Plastic Be an Individual Choice or Be Regulated By the Government?</a>
-            </div>
-        </div>
-
-        <div class="card card-index">
-            <div class="card-img">
-                <img class="card-img-top img-fluid" src="pubs/serp-junk-food/images/junkfood1.jpg" alt="Photo of gummy worms"/>
-            </div>
-            <div class="card-body">
-                <div class="eyebrow">Article</div>
-                <a href="index-readium.html?pub=serp-junk-food" class="card-title">Junk food: Should schools sell it?</a>
-            </div>
-        </div>
-
-        <div class="card card-index">
-            <div class="card-img">
-                <img class="card-img-top img-fluid" src="pubs/serp-children-protesting/images/childprotesting1.jpg" alt="Photo of a group of protesters, some of whom are children." />
-            </div>
-            <div class="card-body">
-                <div class="eyebrow">Article</div>
-                <a href="index-readium.html?pub=serp-children-protesting" class="card-title">Children protesting: duty or danger?</a>
-            </div>
-        </div>
-
-        <div class="card card-index">
-            <div class="card-img">
-                <img class="card-img-top img-fluid" src="pubs/serp-eating-meat/images/meat2-pointnshoot-photography.jpg" alt="Photo of cheeseburger and fries"/>
-            </div>
-            <div class="card-body">
-                <div class="eyebrow">Article</div>
-                <a href="index-readium.html?pub=serp-eating-meat" class="card-title">Should people continue to eat meat?</a>
-            </div>
-        </div>
-
-        <div class="card card-index">
-            <div class="card-img">
-                <img class="card-img-top img-fluid" src="pubs/cast-lexington/images/etching_source.jpg" alt="Lines of British soldiers advance and shoot as American
-      colonists run away." />
-            </div>
-            <div class="card-body">
-                <div class="eyebrow">Documents</div>
-                <a href="index-readium.html?pub=cast-lexington" class="card-title">What Really Happened at the Battle of Lexington?</a>
-            </div>
-        </div>
-    </div>
+    <div class="card-deck-index cislc-libraryViewer"></div>
 </div>
+
 <script>
-    $.get("http://localhost:3000/webpubindex.json", function(resp) {
-        console.log(resp);
-    })
+    $(document).ready(function () {
+        cisl.library.viewer(".cislc-libraryViewer");
+    });
 </script>
 </body>
 </html>
