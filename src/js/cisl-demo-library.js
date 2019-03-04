@@ -50,7 +50,7 @@
                 image: publication.images[0].href,
                 alt: "",
                 title: publication.metadata.title,
-                type: publication.metadata["@type"],
+                type: publication.metadata.description,
                 contentServerRootUrl: contentServerRootUrl,
                 pubDirectory: "pub"
             });
