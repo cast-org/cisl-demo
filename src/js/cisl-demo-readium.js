@@ -203,7 +203,7 @@
         }
 
         // FIXME, this is a hack
-        var glossaryURI = publication.sourceURI.replace("manifest.json", "glossary.json");
+        var glossaryURI = publication.sourceURI.replace("manifest.json", "EPUB/glossary.json");
         jQuery.get(glossaryURI)
             .done(function(res) {
                 addToUserGlossary(res, glossaryURI);
