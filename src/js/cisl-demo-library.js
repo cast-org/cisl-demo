@@ -6,11 +6,26 @@
     fluid.defaults("cisl.library.display", {
         gradeNames: ["fluid.component"],
         components: {
-            indexLoader: {
+            opdsLoader: {
                 type: "fluid.resourceLoader",
                 options: {
                     resources: {
                         index: "http://localhost:3000/opds2/publications.json"
+                    }
+                }
+            },
+            libraryIndex: {
+                type: "fluid.component",
+                options: {
+                    listeners: {
+                        "{opdsLoader}.events.onResourcesLoaded": {
+                            func: "cisl.library.display.createIndex",
+                            args: ["{opdsLoader}.resources.index.resourceText",
+                            "{that}"]
+                        }
+                    },
+                    events: {
+                        onIndexReady: null
                     }
                 }
             },
@@ -20,9 +35,9 @@
                 container: "",
                 options: {
                     listeners: {
-                        "{indexLoader}.events.onResourcesLoaded": {
+                        "{libraryIndex}.events.onIndexReady": {
                             func: "cisl.library.display.appendIndexMarkup",
-                            args: ["{indexLoader}.resources.index.resourceText", "{that}.options.strings.itemTemplate", "{that}.options.contentServerRootUrl", "{that}.container"]
+                            args: ["{libraryIndex}.index", "{that}.options.strings.itemTemplate", "{that}.options.contentServerRootUrl", "{that}.container"]
                         }
                     },
                     contentServerRootUrl: "http://localhost:3000",
@@ -34,18 +49,36 @@
         }
     });
 
-    cisl.library.display.appendIndexMarkup = function(indexResourceText, itemTemplate, contentServerRootUrl, container) {
-        var publicationsFeed = JSON.parse(indexResourceText);
+    cisl.library.display.createIndex = function (publicationsResourceText, libraryIndexComponent) {
+            var publicationsFeed = JSON.parse(publicationsResourceText);
 
-        fluid.each(publicationsFeed.publications, function (publication) {
+            var index = {};
 
-            // TODO: not great
-            var manifestUrl = publication.links[0].href;
+            fluid.each(publicationsFeed.publications, function (publication) {
+                // TODO: not great
+                var manifestUrl = publication.links[0].href;
 
-            var pubId = cisl.library.display.parsePubIdFromUrl(manifestUrl);
+                var streamerPubId = cisl.library.display.parsePubIdFromUrl(manifestUrl);
+
+                var identifier = publication.metadata.identifier;
+
+                var pubForIndex = $.extend({}, publication, {
+                    streamerPubId: streamerPubId
+                });
+
+                index[identifier] = pubForIndex;
+            });
+
+            libraryIndexComponent.index = index;
+            libraryIndexComponent.events.onIndexReady.fire();
+    };
+
+    cisl.library.display.appendIndexMarkup = function(libraryIndex, itemTemplate, contentServerRootUrl, container) {
+
+        fluid.each(libraryIndex, function (publication) {
 
             var itemMarkup = fluid.stringTemplate(itemTemplate, {
-                id: pubId,
+                id: publication.streamerPubId,
                 // TODO: also not great
                 image: publication.images[0].href,
                 alt: "",
