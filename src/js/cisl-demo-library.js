@@ -20,6 +20,7 @@
             var publicationsFeed = JSON.parse(publicationsResourceText);
 
             var index = {};
+            var altVersionIndex = {};
 
             fluid.each(publicationsFeed.publications, function (publication) {
                 // TODO: this is not great
@@ -36,7 +37,28 @@
                 index[identifier] = pubForIndex;
             });
 
+            var altVersions = {};
+
+            fluid.remove_if(index, function (publication, idx) {
+                console.log(idx);
+                if(idx.includes("alt-version")) {
+                    return true;
+                }
+            }, altVersions);
+
+            fluid.each(altVersions, function (altVersion, idx) {
+                
+                var originalPublicationId = idx.split(".alt-version-")[0];
+                var altVersionType = idx.split(".alt-version-")[1];
+                altVersionIndex[originalPublicationId] = altVersionIndex[originalPublicationId] || {};
+                altVersionIndex[originalPublicationId][altVersionType] = altVersion;
+            });
+
+            console.log(index, altVersionIndex);
+
             libraryIndexComponent.index = index;
+            libraryIndexComponent.altVersionIndex = altVersionIndex;
+
             libraryIndexComponent.events.onIndexReady.fire();
     };
 
