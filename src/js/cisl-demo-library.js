@@ -3,6 +3,23 @@
 (function (fluid) {
     "use strict";
 
+    fluid.defaults("cisl.library.libraryIndex", {
+        gradeNames: "fluid.component",
+        invokers: {
+            createIndex: {
+                funcName: "cisl.library.display.createIndex",
+                args: [
+                    "{arguments}.0",
+                    "{that}"
+                ]
+            }
+        }
+    });
+
+    fluid.defaults("cisl.library.libraryView", {
+        gradeNames: "fluid.viewComponent"
+    });
+
     fluid.defaults("cisl.library.display", {
         gradeNames: ["fluid.component"],
         components: {
@@ -15,13 +32,12 @@
                 }
             },
             libraryIndex: {
-                type: "fluid.component",
+                type: "cisl.library.libraryIndex",
                 options: {
                     listeners: {
                         "{opdsLoader}.events.onResourcesLoaded": {
-                            func: "cisl.library.display.createIndex",
-                            args: ["{opdsLoader}.resources.index.resourceText",
-                            "{that}"]
+                            func: "{that}.createIndex",
+                            args: ["{opdsLoader}.resources.index.resourceText"]
                         }
                     },
                     events: {
@@ -55,7 +71,7 @@
             var index = {};
 
             fluid.each(publicationsFeed.publications, function (publication) {
-                // TODO: not great
+                // TODO: this is not great
                 var manifestUrl = publication.links[0].href;
 
                 var streamerPubId = cisl.library.display.parsePubIdFromUrl(manifestUrl);
@@ -79,7 +95,7 @@
 
             var itemMarkup = fluid.stringTemplate(itemTemplate, {
                 id: publication.streamerPubId,
-                // TODO: also not great
+                // TODO: this is not great
                 image: publication.images[0].href,
                 alt: "",
                 title: publication.metadata.title,
