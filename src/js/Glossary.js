@@ -12,7 +12,7 @@ function addToUserGlossary(listOfWords, basePath) {
     for (var i in listOfWords) {
         var item = listOfWords[i];
         if (!findGlossaryWord(item.word)) {
-            console.log("New glossary word: ", item.word);
+            // console.log("New glossary word: ", item.word);
             // Item will have image paths that are relative to the basePath. Make them absolute.
             for (var f in item.images) {
                 var image = item.images[f];
@@ -80,7 +80,7 @@ var secondaryMarkOptions = {
 function makeMarkCallbackFunction(word, iFrameContainerSelector) {
     "use strict";
     return function (node) {
-        console.log("Setting up popover, word=", word);
+        // console.log("Setting up popover, word=", word);
 
         $(node)
             .data("word", word)
@@ -191,7 +191,7 @@ function markGlossaryWords(scopeSelector, iFrameContainerSelector) {
     "use strict";
     var scope = $(scopeSelector) || $("article");
 
-    console.log("markGlossaryWords", scope)
+    // console.log("markGlossaryWords", scope)
 
     for (var i in userGlossary) {
         var word = userGlossary[i].word;
@@ -203,7 +203,7 @@ function markGlossaryWords(scopeSelector, iFrameContainerSelector) {
     scope.on("beforeShow.cfw.popover", "a.gloss",
         function () {
             var word = $(this).data("word");
-            console.log("clicked: ", word);
+            // console.log("clicked: ", word);
             // Hide other popovers
             scope.find("a.gloss").CFW_Popover("hide");
             // Show other matches
@@ -213,7 +213,7 @@ function markGlossaryWords(scopeSelector, iFrameContainerSelector) {
     // Additional actions when popover closes
     scope.on("afterHide.cfw.popover", "a.gloss",
         function () {
-            console.log("Closed: ", $(this).data("word"));
+            // console.log("Closed: ", $(this).data("word"));
             scope.unmark({ element: "span" });
         });
 }

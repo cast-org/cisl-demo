@@ -47,7 +47,7 @@
             }, altVersions);
 
             fluid.each(altVersions, function (altVersion, idx) {
-                
+
                 var originalPublicationId = idx.split(".alt-version-")[0];
                 var altVersionType = idx.split(".alt-version-")[1];
                 altVersionIndex[originalPublicationId] = altVersionIndex[originalPublicationId] || {};
@@ -99,7 +99,7 @@
         });
     };
 
-    fluid.defaults("cisl.library.display", {
+    fluid.defaults("cisl.library", {
         gradeNames: ["fluid.component"],
         components: {
             opdsLoader: {
@@ -123,7 +123,13 @@
                         onIndexReady: null
                     }
                 }
-            },
+            }
+        }
+    });
+
+    fluid.defaults("cisl.library.display", {
+        gradeNames: ["cisl.library"],
+        components: {
             libraryView: {
                 type: "cisl.library.libraryView",
                 // must specify

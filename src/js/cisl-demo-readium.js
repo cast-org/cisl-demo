@@ -3,8 +3,73 @@
 (function (fluid) {
     "use strict";
 
+    fluid.defaults("cisl.readium.versionSwitcher", {
+        gradeNames: ["fluid.component"],
+        components: {
+            library: {
+                type: "cisl.library"
+            },
+            versionSwitcherMarkup: {
+                type: "fluid.viewComponent",
+                // Must specify
+                container: "",
+                options: {
+                    listeners: {
+                        "{library}.libraryIndex.events.onIndexReady": {
+                            func: "{that}.addSwitcherMarkup"
+                        }
+                    },
+                    selectors: {
+                        switcherList: ".cislc-version-switcher-list"
+                    },
+                    invokers: {
+                        addSwitcherMarkup: {
+                            funcName: "cisl.readium.versionSwitcher.addSwitcherMarkup",
+                            args: ["{library}", "{that}", "www.cast.org.cisl-demo.cast-lexington"]
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    cisl.readium.versionSwitcher.addSwitcherMarkup = function(library, versionSwitcherMarkup, identifier) {
+        console.log("addSwitcherMarkup", library, versionSwitcherMarkup, identifier);
+        var mainIndex = library.libraryIndex.index
+        var altVersionIndex = library.libraryIndex.altVersionIndex;
+        var originalVersion = mainIndex[identifier];
+        var altVersions = altVersionIndex[identifier];
+        if(altVersions) {
+            var switcherList = versionSwitcherMarkup.locate("switcherList");
+
+            var originalHtml = '<li class="page-item"><a href="index-readium.html?pubDirectory=pub&pub='
+                + originalVersion.streamerPubId
+                + '" class="page-link">'
+                + 'Original'
+                + '</a></li>';
+
+            switcherList.append(originalHtml);
+
+            fluid.each(altVersions, function (altVersion, altVersionKey) {
+                console.log(altVersion, altVersionKey);
+                var linkHtml = '<li class="page-item"><a href="index-readium.html?pubDirectory=pub&pub='
+                    + altVersion.streamerPubId
+                    + '" class="page-link">'
+                    + altVersionKey
+                    + '</a></li>';
+
+                switcherList.append(linkHtml);
+            });
+        }
+    };
+
     fluid.defaults("cisl.readium.webViewer", {
         gradeNames: ["fluid.viewComponent"],
+        components: {
+            versionSwitcher: {
+                type: "cisl.readium.versionSwitcher"
+            }
+        },
         readiumOptions: {
             webpubUrl: {
                 expander: {
@@ -131,10 +196,6 @@
         }
     });
 
-    cisl.readium.webViewer.getContainerBasedMeasurement = function (container, direction, padding) {
-        return container[direction]() - padding;
-    };
-
     cisl.readium.webViewer.determineManifestUrl = function (pubIdParameter, pubDirectoryParameter, urlTemplate, contentServerRootUrl) {
         var pubId = new URLSearchParams(window.location.search).get(pubIdParameter);
         var pubDirectory = new URLSearchParams(window.location.search).get(pubDirectoryParameter);
@@ -144,6 +205,10 @@
             pubDirectory: pubDirectory,
             contentServerRootUrl: contentServerRootUrl
             });
+    };
+
+    cisl.readium.webViewer.getContainerBasedMeasurement = function (container, direction, padding) {
+        return container[direction]() - padding;
     };
 
     cisl.readium.webViewer.handleIFrameLoaded = function (loadedIFrame, readiumComponent) {

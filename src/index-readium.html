@@ -8,6 +8,7 @@
         <script src="js/main.js"></script>
         <script src="js/cisl-demo-uio.js"></script>
         <script src="js/cisl-demo-readium.js"></script>
+        <script src="js/cisl-demo-library.js"></script>
 
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" />
         <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
@@ -81,6 +82,11 @@
                 <a href="index.html" class="link-cta return-link">
                     <i class="fas fa-chevron-left cisl-icon"></i>Return to library
                 </a>
+                <nav class="cislc-version-switcher" aria-label="Article version">
+                    <ul class="cislc-version-switcher-list pagination pagination-group cisl-pagination">
+                        <!-- li elements will be added by cisl-demo-readium.js, or this will be hidden -->
+                    </ul>
+                </nav>
                 <nav id="version-switcher" aria-label="Article version">
                     <ul class="pagination pagination-group cisl-pagination">
                         <!-- li elements will be added by cisl-demo-readium.js, or this will be hidden -->
@@ -98,7 +104,19 @@
         <script>
             var readiumComponent;
             $(document).ready(function () {
-                readiumComponent = cisl.readium.webViewer(".cislc-readium")
+                readiumComponent = cisl.readium.webViewer(".cislc-readium", {
+                    components: {
+                        versionSwitcher: {
+                            options: {
+                                components: {
+                                    versionSwitcherMarkup: {
+                                        container: ".cislc-version-switcher"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
             });
         </script>
         <div id="image-info-modal" class="modal">
