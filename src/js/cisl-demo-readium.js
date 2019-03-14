@@ -14,18 +14,13 @@
                 // Must specify
                 container: "",
                 options: {
-                    listeners: {
-                        "{library}.libraryIndex.events.onIndexReady": {
-                            func: "{that}.addSwitcherMarkup"
-                        }
-                    },
                     selectors: {
                         switcherList: ".cislc-version-switcher-list"
                     },
                     invokers: {
                         addSwitcherMarkup: {
                             funcName: "cisl.readium.versionSwitcher.addSwitcherMarkup",
-                            args: ["{library}", "{that}", "www.cast.org.cisl-demo.cast-lexington"]
+                            args: ["{library}", "{that}", "{arguments}.0"]
                         }
                     }
                 }
@@ -33,8 +28,12 @@
         }
     });
 
-    cisl.readium.versionSwitcher.addSwitcherMarkup = function(library, versionSwitcherMarkup, identifier) {
-        console.log("addSwitcherMarkup", library, versionSwitcherMarkup, identifier);
+    cisl.readium.versionSwitcher.addSwitcherMarkup = function(library, versionSwitcherMarkup, publication) {
+        console.log("addSwitcherMarkup", library, versionSwitcherMarkup, identifier, publication.metadata.identifier);
+        var baseIdentifier = publication.metadata.identifier;
+        var originalPublicationId = baseIdentifier.split(".alt-version-")[0];
+        identifier = originalPublicationId;
+
         var mainIndex = library.libraryIndex.index
         var altVersionIndex = library.libraryIndex.altVersionIndex;
         var originalVersion = mainIndex[identifier];
@@ -67,7 +66,29 @@
         gradeNames: ["fluid.viewComponent"],
         components: {
             versionSwitcher: {
-                type: "cisl.readium.versionSwitcher"
+                type: "cisl.readium.versionSwitcher",
+                options: {
+                    events: {
+                        onVersionSwitcherRequirementsReady: {
+                            events: {
+                                publicationLoaded: "{webViewer}.events.onPublicationLoaded",
+                                indexReady: "{that}.library.libraryIndex.events.onIndexReady"
+                            }
+                        }
+                    },
+                    components: {
+                        versionSwitcherMarkup: {
+                            options: {
+                                listeners: {
+                                    "{versionSwitcher}.events.onVersionSwitcherRequirementsReady": {
+                                        func: "{that}.addSwitcherMarkup",
+                                        args: ["{webViewer}.publication"]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         readiumOptions: {
