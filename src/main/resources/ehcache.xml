@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="true"
+         monitoring="autodetect"
+         dynamicConfig="true"
+         maxBytesLocalHeap="25%">
+
+    <!-- Configuration for all caches used in the application.
+         Global setting above limits total in-memory cache size to 25% of JVM heap space.
+         Some caches, as set below, can overflow to disk.
+
+            defaultTransactionTimeoutInSeconds="15"
+            maxBytesLocalOffHeap="0"
+            maxBytesLocalDisk="0"
+    -->
+
+    <!-- Location of on-disk caches -->
+    <diskStore path="java.io.tmpdir"/>
+
+    <!-- Defaults for caches not mentioned below. -->
+    <defaultCache
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            maxElementsOnDisk="10000000"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU">
+        <persistence strategy="localTempSwap"/>
+    </defaultCache>
+
+
+    <!-- Hibernate's Cache for keeping 'lastUpdated' data on each table.  Should never expire. -->
+    <cache name="org.hibernate.cache.spi.UpdateTimestampsCache" eternal="true" overflowToDisk="true" />
+
+    <!-- Hibernate's Query Cache -->
+    <cache name="org.hibernate.cache.internal.StandardQueryCache" eternal="false" timeToLiveSeconds="3600" overflowToDisk="true" />
+
+    <!-- Most DB objects are set to cache up to 1 hour, and don't cache to disk. Use default LRU strategy. -->
+    <!-- No size specified means they will equally share the full cache's max size. -->
+    <!-- CWM objects -->
+    <cache name="org.cast.cwm.data.BinaryFileData" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.data.Event" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.data.LoginSession" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.data.Prompt" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.data.ResponseMetadata" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.data.User" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.data.UserContent" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.data.UserPreference" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.tag.model.Tag" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.tag.model.Tagging" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.xml.DomCache" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+
+    <!-- low usage: size smaller -->
+    <cache name="org.cast.cwm.data.Initialization" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.data.Site" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+    <cache name="org.cast.cwm.data.Period" timeToLiveSeconds="3600" eternal="false" overflowToDisk="false"></cache>
+
+    <!-- application objects -->
+
+</ehcache>

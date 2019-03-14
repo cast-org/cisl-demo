@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+    <div wicket:id="prefsPanel"></div>
+
+    <div class="cislc-readium">
+        <div wicket:id="header"></div>
+
+        <div class="topnav">
+            <a wicket:id="homeLink" href="index.html" class="link-cta return-link">
+                <i class="fas fa-chevron-left cisl-icon"></i>
+                Return to library
+            </a>
+            <nav id="version-switcher" aria-label="Article version">
+                <ul class="pagination pagination-group cisl-pagination">
+                    <!-- li elements will be added by cisl-demo-readium.js, or this will be hidden -->
+                </ul>
+            </nav>
+            <button id="image-info-trigger" style="display:none;" data-cfw="modal" data-cfw-modal-target="#image-info-modal">
+                Launch image modal
+            </button>
+        </div>
+
+        <div class="cislc-readium-iframe-container"></div>
+    </div>
+</wicket:extend>
+</body>
+</html>

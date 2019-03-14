@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en-us" xmlns:wicket="http://wicket.apache.org">
+<head><script type="text/javascript" src="../resource/org.apache.wicket.markup.html.pages.BrowserInfoForm/wicket-browser-info.js"></script>
+<script type="text/javascript" src="../resource/org.apache.wicket.resource.JQueryResourceReference/jquery/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="../resource/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/res/js/wicket-event-jquery.js"></script>
+
+    <title>Login</title>
+<script type="text/javascript" >
+/*<![CDATA[*/
+Wicket.Event.add(window, "load", function(event) { 
+var div = document.createElement('div');div.id='browserInfoContainer';div.style.display='none';document.getElementById('form1').appendChild(div);Wicket.BrowserInfo.populateFields('browserInfoContainer');;
+;});
+/*]]>*/
+</script>
+</head>
+<body>
+    <header>
+        <h1><wicket:message key="titleText">Log in to the CISL Reader</wicket:message></h1>
+    </header>
+
+    <main>
+        <div wicket:id="loginPanel"><wicket:panel>
+<form wicket:id="form" id="form1" method="post" action="./org.cast.reader.page.LoginPage?-1.IFormSubmitListener-loginPanel-form"><div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"><input type="hidden" name="form1_hf_0" id="form1_hf_0" /></div>
+	 <div wicket:id="feedback" class="errorBox"><wicket:panel>
+  
+</wicket:panel></div>
+	 <div class="registerRow">
+	    <label wicket:id="usernameLabel" for="username2" class="required">User Name:</label>
+	    <div wicket:id="usernameBorder" class="inputItem" id="usernameBorder3"><wicket:border>
+  <wicket:body>
+	       <input wicket:id="username" type="text" name="usernameBorder:usernameBorder_body:username" value="" id="username2"/>
+	    </wicket:body>
+
+</wicket:border></div>
+	 </div>
+	 <div class="registerRow">
+	    <label wicket:id="passwordLabel" for="password4" class="required">Password:</label>
+		<div wicket:id="passwordBorder" class="inputItem" id="passwordBorder5"><wicket:border>
+  <wicket:body>
+		   <input wicket:id="password" type="password" name="passwordBorder:passwordBorder_body:password" value="" id="password4"/>
+		</wicket:body>
+
+</wicket:border></div>
+	 </div>
+	 <div class="registerRow submit">
+		 <div class="inputItem">
+	        <input type="submit" class="button standard" value="Sign In" />
+	     </div>
+	 </div>
+</form>
+</wicket:panel></div>
+    </main>
+</body>
+</html>
+

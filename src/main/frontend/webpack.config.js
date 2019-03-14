@@ -13,5 +13,12 @@ module.exports = {
           figuration: "figuration/dist/js/figuration.min",
           "mark.js": "mark.js/dist/jquery.mark.min.js"
       }
-  }
+  },
+    externals: {
+        jquery: 'jquery'
+    }
 };
+
+// webpack.ProvidePlugin({
+//    '$': 'jquery'
+// });

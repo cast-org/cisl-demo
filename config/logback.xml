@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true">
+
+    <!-- For use in Docker, we just want to log to the console and let docker deal with it. -->
+
+    <appender name="Stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss} %-5level %-36logger{36} %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Shows exceptions thrown during rendering which are otherwise invisible -->
+    <logger name="org.apache.wicket.RequestCycleExtra" level="DEBUG"/>
+
+    <logger name="org.apache.wicket" level="WARN"/>
+    <logger name="org.hibernate" level="WARN"/>
+    <logger name="org.hibernate.cache.EhCacheProvider" level="ERROR"/>
+
+    <!-- <logger name="org.cast" level="DEBUG"/> -->
+    <!-- <logger name="org.hibernate.SQL" level="TRACE"/> -->
+
+    <root level="INFO">
+        <appender-ref ref="Stdout"/>
+    </root>
+
+</configuration>
