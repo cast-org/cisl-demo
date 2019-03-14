@@ -35,7 +35,7 @@ body {
     border-radius: 50%;
 }
 .link-cta .fas:hover,
-.link-cta .fas:focus, {
+.link-cta .fas:focus {
     text-decoration: none;
 }
 .link-cta .fas:last-child {
@@ -44,6 +44,21 @@ body {
 .link-cta .fas:first-child {
     margin-right: .25em;
 }
+
+.link-stretch::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    /* Just in case `pointer-events: none` is set on a parent */
+    pointer-events: auto;
+    content: "";
+    /* IE10 bugfix, see https://stackoverflow.com/questions/16947967/ie10-hover-pseudo-class-doesnt-work-without-background-color */
+    background-color: rgba(0, 0, 0, 0);
+}
+
 
 @media (min-width: 48em) {
     .topnav {
@@ -171,20 +186,27 @@ figure a:hover, figure a:active {
 .card-index .card-img-bottom {
     border-radius: 0 0 1.5rem 1.5rem;
 }
+.card-index a {
+    color: inherit;
+    text-decoration: none;
+}
 .card-index .card-title {
     margin-bottom: .5rem;
     font-family: inherit;
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.25;
-    color: inherit;
-    text-decoration: none;
 }
-.card-index .card-title:hover,
-.card-index .card-title:focus {
-    color: inherit;
-    text-decoration: underline;
+.card-index .link-stretch:hover,
+.card-index .link-stretch:focus {
+    outline: 0;
 }
+.card-index .link-stretch:hover::after,
+.card-index .link-stretch:focus::after {
+    border-radius: 1.5rem;
+    box-shadow: 0 0 .1rem .1rem rgba(0, 0, 128, .5);
+}
+
 
 .eyebrow {
     margin-bottom: .125em;
