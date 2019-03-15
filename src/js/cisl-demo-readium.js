@@ -32,7 +32,7 @@
         console.log("addSwitcherMarkup", library, versionSwitcherMarkup, identifier, publication.metadata.identifier);
         var baseIdentifier = publication.metadata.identifier;
         var originalPublicationId = baseIdentifier.split(".alt-version-")[0];
-        identifier = originalPublicationId;
+        var identifier = originalPublicationId;
 
         var mainIndex = library.libraryIndex.index
         var altVersionIndex = library.libraryIndex.altVersionIndex;
