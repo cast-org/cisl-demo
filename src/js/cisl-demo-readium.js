@@ -35,7 +35,7 @@
 
         var identifier = originalPublicationId;
 
-        var mainIndex = library.libraryIndex.index
+        var mainIndex = library.libraryIndex.index;
         var altVersionIndex = library.libraryIndex.altVersionIndex;
         var originalVersion = mainIndex[identifier];
         var altVersions = altVersionIndex[identifier];
@@ -267,32 +267,6 @@
     cisl.readium.webViewer.handlePublicationLoaded = function (publication, iFrameLoaderReadyEvent, iFrameLoadedEvent, renditionReadyEvent, renditionRenderErrorEvent, readiumComponent) {
 
         var readiumOptions = readiumComponent.options.readiumOptions;
-
-        console.log(publication, readiumComponent);
-
-        // Construct links to alternate versions, if any
-        if (publication.links && publication.links.length>1) {
-            var ul = $('#version-switcher ul');
-            for (var i in publication.links) {
-                var link = publication.links[i];
-                if (link.rel.has('self')) {
-                    // Current version
-                    var linkHtml = '<li class="page-item"><span class="page-link active">'
-                        + link.title
-                        + '</span></li>';
-                } else {
-                    // Link to alternate version
-                    var linkHtml = '<li class="page-item"><a href="index-readium.html?pub='
-                        + link.href
-                        + '" class="page-link">'
-                        + link.title
-                        + '</a></li>';
-                }
-                ul.append(linkHtml);
-            }
-        } else {
-            $('#version-switcher').remove();
-        }
 
         // FIXME, this is a hack
         var glossaryURI = publication.sourceURI.replace("manifest.json", "EPUB/glossary.json");
