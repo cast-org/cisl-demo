@@ -12,7 +12,7 @@
             versionSwitcherMarkup: {
                 type: "fluid.viewComponent",
                 // Must specify
-                container: "",
+                container: null,
                 options: {
                     selectors: {
                         switcherList: ".cislc-version-switcher-list"
@@ -29,9 +29,10 @@
     });
 
     cisl.readium.versionSwitcher.addSwitcherMarkup = function(library, versionSwitcherMarkup, publication) {
-        console.log("addSwitcherMarkup", library, versionSwitcherMarkup, identifier, publication.metadata.identifier);
+        // console.log("addSwitcherMarkup", library, versionSwitcherMarkup, identifier, publication.metadata.identifier);
         var baseIdentifier = publication.metadata.identifier;
         var originalPublicationId = baseIdentifier.split(".alt-version-")[0];
+
         var identifier = originalPublicationId;
 
         var mainIndex = library.libraryIndex.index
@@ -39,23 +40,28 @@
         var originalVersion = mainIndex[identifier];
         var altVersions = altVersionIndex[identifier];
         if(altVersions) {
+
+            var currentVersion = baseIdentifier.split(".alt-version-")[1] ? baseIdentifier.split(".alt-version-")[1] : "Original";
+
             var switcherList = versionSwitcherMarkup.locate("switcherList");
 
-            var originalHtml = '<li class="page-item"><a href="index-readium.html?pubDirectory=pub&pub='
-                + originalVersion.streamerPubId
-                + '" class="page-link">'
-                + 'Original'
-                + '</a></li>';
+            var switcherItemTemplate = '<li class="page-item"><a href="index-readium.html?pubDirectory=pub&pub=%streamerPubId" class="page-link %isActiveClass">%version</a></li>';
+
+            var originalHtml = fluid.stringTemplate(switcherItemTemplate, {
+                streamerPubId: originalVersion.streamerPubId,
+                version: "Original",
+                isActiveClass: currentVersion === "Original" ? "active" : null
+            });
 
             switcherList.append(originalHtml);
 
             fluid.each(altVersions, function (altVersion, altVersionKey) {
                 console.log(altVersion, altVersionKey);
-                var linkHtml = '<li class="page-item"><a href="index-readium.html?pubDirectory=pub&pub='
-                    + altVersion.streamerPubId
-                    + '" class="page-link">'
-                    + altVersionKey
-                    + '</a></li>';
+                var linkHtml = fluid.stringTemplate(switcherItemTemplate, {
+                    streamerPubId: altVersion.streamerPubId,
+                    version: altVersionKey,
+                    isActiveClass: currentVersion === altVersionKey ? "active" : null
+                });
 
                 switcherList.append(linkHtml);
             });
