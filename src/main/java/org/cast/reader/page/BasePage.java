@@ -2,12 +2,10 @@ package org.cast.reader.page;
 
 import com.google.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.wicket.Application;
 import org.apache.wicket.authroles.authorization.strategies.role.annotations.AuthorizeAction;
 import org.apache.wicket.authroles.authorization.strategies.role.annotations.AuthorizeActions;
-import org.apache.wicket.markup.head.CssHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.markup.head.JavaScriptHeaderItem;
-import org.apache.wicket.markup.head.PriorityHeaderItem;
+import org.apache.wicket.markup.head.*;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.StringResourceModel;
 import org.apache.wicket.request.http.flow.AbortWithHttpErrorCodeException;
@@ -20,6 +18,9 @@ import org.cast.cwm.data.LoggedWebPage;
 import org.cast.cwm.service.IEventService;
 import org.cast.reader.ReaderApplication;
 import org.cast.reader.component.Header;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Base class for all pages
@@ -64,8 +65,17 @@ public abstract class BasePage extends LoggedWebPage<Event> {
 		response.render(CssHeaderItem.forReference(
 				new ContextRelativeResourceReference("css/cisl-demo.css")));
 
-		response.render(JavaScriptHeaderItem.forReference(
-				new ContextRelativeResourceReference("js/main.js")));
+		response.render(new PriorityHeaderItem(JavaScriptHeaderItem.forReference(
+				new ContextRelativeResourceReference("js/main.js") {
+            @Override
+            public List<HeaderItem> getDependencies() {
+                List<HeaderItem> dependencies = new LinkedList<>();
+                dependencies.add(
+                        JavaScriptHeaderItem.forReference(
+                                Application.get().getJavaScriptLibrarySettings().getJQueryReference()));
+                return dependencies;
+            }
+        })));
 	}
 
 	protected void readPageParams(PageParameters params) {
