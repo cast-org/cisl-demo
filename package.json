@@ -20,6 +20,8 @@
     "@evidentpoint/r2-navigator-web": "^0.0.4",
     "figuration": "https://github.com/cast-org/figuration.git#v4-tooltip-iframe",
     "infusion": "3.0.0-dev.20180801T212157Z.09bf3d438",
+    "jquery": "3.2.1",
+    "jquery-ui": "1.12.1",
     "mark.js": "^8.11.1",
     "npm": "^6.5.0"
   },
