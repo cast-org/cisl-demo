@@ -64,8 +64,8 @@ public abstract class BasePage extends LoggedWebPage<Event> {
 		response.render(CssHeaderItem.forReference(
 				new ContextRelativeResourceReference("css/cisl-demo.css")));
 
-		response.render(new PriorityHeaderItem(JavaScriptHeaderItem.forReference(
-				new ContextRelativeResourceReference("js/main.js"))));
+		response.render(JavaScriptHeaderItem.forReference(
+				new ContextRelativeResourceReference("js/main.js")));
 	}
 
 	protected void readPageParams(PageParameters params) {
