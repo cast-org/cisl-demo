@@ -45,4 +45,8 @@ something like:
 This should make the site available at http://localhost:3000/
 You can log in as any user in configurations/default/users.csv, or as the automatically-created "admin" user.
 
+* RUNNING A COMPATIBLE POSTGRES DOCKER CONTAINER
 
+This will run a Docker container with Postgres 9 with the needed config, for local testing purposes:
+
+    docker run --name some-postgres -e POSTGRES_USER=dev -e POSTGRES_PASSWORD=dev -e POSTGRES_DB=cislreader -p 5432:5432  postgres:9.6.12-alpine
