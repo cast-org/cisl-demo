@@ -15,7 +15,7 @@ http://cisl-demo.cast.org
         - integrate the Glossary preference
         - remove some unwanted preferences
         - change the options / appearance / behaviour of others
-- `pubs` contains a few example "books" in (approximately) the format that the 
+- `pubs` contains a few example "books" in (approximately) the format that the
 Readium 2 streamer would output; this includes a [Readium Web Publication Manifest](https://readium.org/webpub-manifest/),
 HTML files and images.  A glossary.json file, specific to this application,
 is also included.
@@ -32,3 +32,7 @@ is also included.
 
 1. See "Building and Running the Demo" above
 2. You can run `grunt watch` to watch the `src` directory and rebuild the demo as you make changes for speedier development flow.
+
+## Deploying
+
+1. `grunt buildProd` will produce a somewhat more optimized production build of the Javascript assets, for deployment purposes.
