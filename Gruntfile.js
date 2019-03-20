@@ -28,7 +28,8 @@ module.exports = function (grunt) {
             }
         },
         webpack: {
-            dev: webpackConfig
+            dev: webpackConfig,
+            prod: Object.assign(webpackConfig, {mode: "production"})
         },
         copy: {
             publications: {
@@ -99,4 +100,5 @@ module.exports = function (grunt) {
     grunt.registerTask("default", ["lint"]);
     grunt.registerTask("lint", "Apply eslint and jsonlint", ["eslint", "jsonlint"]);
     grunt.registerTask("build", "Create full application in target directory", ["clean:target", "copy:demoLibraries", "copy:publications", "copy:srcFiles", "webpack:dev"]);
+    grunt.registerTask("buildProd", "Create full application in target directory", ["clean:target", "copy:demoLibraries", "copy:publications", "copy:srcFiles", "webpack:prod"]);
 };
