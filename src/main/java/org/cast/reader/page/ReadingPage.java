@@ -36,18 +36,14 @@ public class ReadingPage extends BasePage {
     public void renderHead(IHeaderResponse response) {
         super.renderHead(response);
 
-        response.render(JavaScriptHeaderItem.forReference(
-                new ContextRelativeResourceReference("js/cisl-demo.js")));
+        response.render(JavaScriptHeaderItem.forUrl("/js/cisl-demo.js"));
 
-        response.render(JavaScriptHeaderItem.forReference(
-                new ContextRelativeResourceReference("js/cisl-demo-readium.js")));
+        response.render(JavaScriptHeaderItem.forUrl("/js/cisl-demo-readium.js"));
 
         response.render(CssHeaderItem.forUrl("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700"));
         response.render(CssHeaderItem.forUrl("https://use.fontawesome.com/releases/v5.6.3/css/all.css")); // integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"
-        response.render(CssHeaderItem.forReference(
-                new ContextRelativeResourceReference("css/cisl-demo.css")));
-        response.render(CssHeaderItem.forReference(
-                new ContextRelativeResourceReference("css/cisl-uio-custom.css")));
+        response.render(CssHeaderItem.forUrl("/css/cisl-demo.css"));
+        response.render(CssHeaderItem.forUrl("/css/cisl-uio-custom.css"));
 
         response.render(OnDomReadyHeaderItem.forScript(
                 "window.readiumComponent = cisl.readium.webViewer(\".cislc-readium\");"));

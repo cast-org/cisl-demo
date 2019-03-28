@@ -15,7 +15,4 @@ module.exports = {
           "mark.js": "mark.js/dist/jquery.mark.min.js"
       }
   },
-  externals: {
-     jquery: 'jquery'
- }
 };

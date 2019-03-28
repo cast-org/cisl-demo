@@ -76,8 +76,8 @@
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
@@ -124,13 +124,6 @@
 				<excludes>
 					<exclude>**/*.java</exclude>
 				</excludes>
-			</resource>
-			<resource>
-				<targetPath>org/cast/snudle2</targetPath>
-				<directory>static</directory>
-				<includes>
-					<include>**</include>
-				</includes>
 			</resource>
 			<resource>
 				<!-- Copies all frontend files directly to WAR's context dir -->
@@ -227,8 +220,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<cwm.version>4.5</cwm.version>
-		<slf4j.version>1.7.21</slf4j.version> <!-- should match what CWM uses.  See also docker/setenv.sh -->
+		<cwm.version>8.0.1-SNAPSHOT</cwm.version>
+		<slf4j.version>1.7.21</slf4j.version> <!-- should match what CWM uses.  See also config/setenv.sh -->
 	</properties>
 
 </project>

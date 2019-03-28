@@ -60,10 +60,8 @@ public abstract class BasePage extends LoggedWebPage<Event> {
 	@Override
 	public void renderHead(IHeaderResponse response) {
 		super.renderHead(response);
-		response.render(CssHeaderItem.forReference(
-				new ContextRelativeResourceReference("lib/figuration/css/figuration.css")));
-		response.render(CssHeaderItem.forReference(
-				new ContextRelativeResourceReference("css/cisl-demo.css")));
+		response.render(CssHeaderItem.forUrl("/lib/figuration/css/figuration.css"));
+		response.render(CssHeaderItem.forUrl("/css/cisl-demo.css"));
 
 		response.render(new PriorityHeaderItem(JavaScriptHeaderItem.forReference(
 				new ContextRelativeResourceReference("js/main.js") {
