@@ -220,7 +220,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<cwm.version>8.0.1-SNAPSHOT</cwm.version>
+		<cwm.version>8.0.1</cwm.version>
 		<slf4j.version>1.7.21</slf4j.version> <!-- should match what CWM uses.  See also config/setenv.sh -->
 	</properties>
 
