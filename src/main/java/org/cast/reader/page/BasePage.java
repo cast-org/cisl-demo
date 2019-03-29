@@ -8,16 +8,20 @@ import org.apache.wicket.authroles.authorization.strategies.role.annotations.Aut
 import org.apache.wicket.markup.head.*;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.StringResourceModel;
+import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.http.flow.AbortWithHttpErrorCodeException;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.request.resource.ContextRelativeResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.PackageResourceReference;
+import org.apache.wicket.util.file.File;
+import org.cast.cwm.ResourceDirectoryReference;
 import org.cast.cwm.data.Event;
 import org.cast.cwm.data.LoggedWebPage;
 import org.cast.cwm.service.IEventService;
 import org.cast.reader.ReaderApplication;
 import org.cast.reader.component.Header;
+import org.cast.reader.service.IHeaderItemService;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -31,7 +35,7 @@ import java.util.List;
 public abstract class BasePage extends LoggedWebPage<Event> {
 
 	@Inject
-	private IEventService eventService;
+	private IHeaderItemService headerItemService;
 
 	public BasePage(PageParameters params) {
 		super(params);
@@ -60,20 +64,23 @@ public abstract class BasePage extends LoggedWebPage<Event> {
 	@Override
 	public void renderHead(IHeaderResponse response) {
 		super.renderHead(response);
-		response.render(CssHeaderItem.forUrl("/lib/figuration/css/figuration.css"));
-		response.render(CssHeaderItem.forUrl("/css/cisl-demo.css"));
+		response.render(CssHeaderItem.forUrl("/static/lib/figuration/css/figuration.css"));
+		response.render(CssHeaderItem.forUrl("/static/css/cisl-demo.css"));
 
-		response.render(new PriorityHeaderItem(JavaScriptHeaderItem.forReference(
-				new ContextRelativeResourceReference("js/main.js") {
-            @Override
-            public List<HeaderItem> getDependencies() {
-                List<HeaderItem> dependencies = new LinkedList<>();
-                dependencies.add(
-                        JavaScriptHeaderItem.forReference(
-                                Application.get().getJavaScriptLibrarySettings().getJQueryReference()));
-                return dependencies;
-            }
-        })));
+		// Main JS rendered as a priority, so it goes early in the header, but depending on jQuery, so that goes even earlier.
+
+		JavaScriptReferenceHeaderItem mainJs = new JavaScriptReferenceHeaderItem(headerItemService.getStaticFileResourceReference(),
+				headerItemService.getStaticFilePageParameters("js/main.js"),
+				"main.js", false, null, null) {
+			public List<HeaderItem> getDependencies() {
+				List<HeaderItem> dependencies = super.getDependencies();
+				dependencies.add(
+						JavaScriptHeaderItem.forReference(
+								Application.get().getJavaScriptLibrarySettings().getJQueryReference()));
+				return dependencies;
+			}
+		};
+		response.render(new PriorityHeaderItem(mainJs));
 	}
 
 	protected void readPageParams(PageParameters params) {

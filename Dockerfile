@@ -1,7 +1,6 @@
-# Build with "docker build -t snudle2 ."
-# Or via maven plugin: "mvn docker:build"
+# Build with "mvn clean package dockerfile:build"
 
-FROM tomcat:8.5-jre8
+FROM tomcat:9.0-jre11-slim
 
 ARG PROJNAME
 

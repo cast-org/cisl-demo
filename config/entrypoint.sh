@@ -14,7 +14,7 @@ if [ -n "$APP_CONFIG" ]; then
 		## Copy defaults, then requested configurations to override them
 		cp -v $SOURCE_DIR/default/* $DEST_DIR
 		cp -v $CONFIG_DIR/* $DEST_DIR
-		mv -v $CONFIG_DIR/context.xml $CATALINA_DIR/ROOT.xml
+		mv -v $DEST_DIR/context.xml $CATALINA_DIR/ROOT.xml
 	else
 		echo "No configuration named " $APP_CONFIG
 		echo "Set APP_CONFIG to one of these:"

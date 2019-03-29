@@ -1,5 +1,6 @@
 package org.cast.reader.component;
 
+import com.google.inject.Inject;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.image.Image;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -12,11 +13,15 @@ import org.apache.wicket.request.resource.PackageResourceReference;
 import org.cast.reader.ReaderApplication;
 import org.cast.reader.data.Book;
 import org.cast.reader.page.ReadingPage;
+import org.cast.reader.service.IHeaderItemService;
 
 /**
  * @author bgoldowsky
  */
 public class BookIndexCard extends GenericPanel<Book> {
+
+    @Inject
+    private IHeaderItemService headerItemService;
 
     public BookIndexCard(String id, IModel<Book> mBook) {
         super(id, mBook);
@@ -25,7 +30,8 @@ public class BookIndexCard extends GenericPanel<Book> {
             new PageParameters().set("pub", getModelObject().getName()));
 
         link.add(new Image("img",
-                new ContextRelativeResourceReference(bookImageSrc())));
+                headerItemService.getStaticFileResourceReference(),
+                headerItemService.getStaticFilePageParameters(bookImageSrc())));
         add(link);
 
         link.add(new Label("type", new PropertyModel<>(getModel(), "type")));

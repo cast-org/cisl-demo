@@ -1,4 +1,4 @@
-<Context path="" reloadable="false">
+<Context reloadable="false">
     <Parameter name="appConfig" override="false" value="/usr/local/tomcat/app.config" />
     <Parameter name="wicket.configuration" override="false" value="deployment" />
 </Context>

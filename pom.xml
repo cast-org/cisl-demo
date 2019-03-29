@@ -126,7 +126,7 @@
 				</excludes>
 			</resource>
 			<resource>
-				<!-- Copies all frontend files directly to WAR's context dir -->
+				<!-- Copies all frontend files to context dir -->
 				<targetPath>${project.build.directory}/${project.build.finalName}</targetPath>
 				<directory>src/main/frontend/target</directory>
 				<includes>

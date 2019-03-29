@@ -3,19 +3,24 @@ package org.cast.reader;
 import com.google.inject.Binder;
 import com.google.inject.Inject;
 import com.google.inject.Module;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.wicket.Application;
 import org.apache.wicket.Page;
 import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.core.util.objects.checker.*;
 import org.apache.wicket.devutils.stateless.StatelessChecker;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.Url;
 import org.apache.wicket.request.resource.UrlResourceReference;
+import org.apache.wicket.resource.FileSystemResourceReference;
 import org.apache.wicket.serialize.java.JavaSerializer;
 import org.apache.wicket.util.file.File;
 import org.apache.wicket.util.file.Path;
 import org.apache.wicket.util.time.Duration;
 import org.cast.cwm.CwmApplication;
 import org.cast.cwm.CwmPackageResourceGuard;
+import org.cast.cwm.ResourceDirectoryReference;
 import org.cast.cwm.admin.AdminHome;
 import org.cast.cwm.data.Role;
 import org.cast.cwm.data.User;
@@ -27,10 +32,13 @@ import org.cast.cwm.service.IUserContentService;
 import org.cast.reader.page.HomePage;
 import org.cast.reader.page.LoginPage;
 import org.cast.reader.page.ReadingPage;
+import org.cast.reader.service.HeaderItemService;
+import org.cast.reader.service.IHeaderItemService;
 import org.cast.reader.service.ReaderEventService;
 import org.cast.reader.service.ReaderUserContentService;
 import org.hibernate.cfg.Configuration;
 
+import javax.servlet.ServletContext;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
@@ -39,12 +47,16 @@ import java.util.List;
 /**
  * Wicket application for the second generation of the UDL Science Notebook, 2016-2020.
  */
+@Slf4j
 public class ReaderApplication extends CwmApplication {
 
-	public static final boolean DO_DETACH_CHECK = true;
+	private static final boolean DO_DETACH_CHECK = true;
 
 	@Inject
 	private ICwmSessionService cwmSessionService;
+
+	@Inject
+	private IHeaderItemService headerItemService;
 
 	public ReaderApplication() {
 	}
@@ -92,6 +104,10 @@ public class ReaderApplication extends CwmApplication {
 		mountPage("home", HomePage.class);
 		mountPage("login", LoginPage.class);
 		mountPage("read", ReadingPage.class);
+
+		final ServletContext context = ((WebApplication) Application.get()).getServletContext();
+		log.debug("Mounting static files from {}", context.getRealPath("/"));
+		mountResource("static", headerItemService.getStaticFileResourceReference());
 
 //		mountPage("healthz", HealthCheck.class);
 	}
@@ -162,6 +178,7 @@ public class ReaderApplication extends CwmApplication {
 //				binder.bind(IUserPreferenceService.class).to(UserPreferenceService.class);
 				binder.bind(IEventService.class).to(ReaderEventService.class);
 				binder.bind(IUserContentService.class).to(ReaderUserContentService.class);
+				binder.bind(IHeaderItemService.class).to(HeaderItemService.class);
 			}});
 		return modules;
 	}
