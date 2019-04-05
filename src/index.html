@@ -5,13 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CISL Reader Demo</title>
 
+    <script src="js/main.js"></script>
+    <script src="js/cisl-demo.js"></script>
+    <script src="js/cisl-demo-readium.js"></script>
+
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" />
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="lib/infusion/dist/assets/src/framework/preferences/css/Enactors.css" />
+    <link rel="stylesheet" type="text/css" href="lib/infusion/dist/assets/src/framework/preferences/css/PrefsEditor.css" />
+    <link rel="stylesheet" type="text/css" href="lib/infusion/dist/assets/src/framework/preferences/css/SeparatedPanelPrefsEditor.css" />
     <link rel="stylesheet" type="text/css" href="lib/figuration/css/figuration.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/cisl-demo.css" />
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/cisl-demo.css">
+    <link rel="stylesheet" type="text/css" href="css/cisl-uio-custom.css">
 </head>
 <body>
+
+    <script>
+        $(document).ready(function () {
+
+            var prefsEditor = fluid.prefs.create(".flc-prefsEditor-separatedPanel", {
+                    build: {
+                        gradeNames: [
+                            "cisl.prefs.auxSchema.starter", // this will add the starter set
+                            "fluid.prefs.auxSchema.letterSpace", // this will add the letter space adjuster and enactor
+                            "cisl.prefs.auxSchema.glossary.demo" // adds the glossary
+                        ],
+                        auxiliarySchema: {
+                            "loaderGrades": ["cisl.prefs.composite.separatedPanel"],
+                            "template": "html/SeparatedPanelPrefsEditor.html",
+                            "terms": {
+                                "templatePrefix": "lib/infusion/src/framework/preferences/html",  // Must match the keyword used below to identify the common path to settings panel templates.
+                                "messagePrefix": "lib/infusion/src/framework/preferences/messages"  // Must match the keyword used below to identify the common path to message files.
+                            },
+                        }
+                    }
+                });
+        });
+
+    </script>
+    <!-- BEGIN markup for Preference Editor -->
+    <div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel">
+        <!--
+            This div is for the sliding panel bar that shows and hides the Preference Editor controls in the mobile view.
+            A separate panel bar for mobile displays is needed to preserver the correct tab order.
+        -->
+        <div class="fl-panelBar fl-panelBar-smallScreen">
+            <span class="fl-prefsEditor-buttons">
+                <button class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+                <button class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+            </span>
+        </div>
+
+        <!-- This is the div that will contain the Preference Editor component -->
+        <div class="flc-slidingPanel-panel flc-prefsEditor-iframe"></div>
+
+        <!--
+            This div is for the sliding panel bar that shows and hides the Preference Editor controls in the desktop view.
+            A separate panel bar for desktop displays is needed to preserver the correct tab order.
+        -->
+        <div class="fl-panelBar fl-panelBar-wideScreen">
+            <span class="fl-prefsEditor-buttons">
+                <button class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
+                <button class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> Reset</button>
+            </span>
+        </div>
+    </div>
+    <!-- END markup for Preference Editor -->
+
 <div class="cislc-readium">
     <div class="cislc-readium-viewer"></div>
     <div class="header">
